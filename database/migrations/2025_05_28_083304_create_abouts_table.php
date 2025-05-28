@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('abouts', function (Blueprint $table) {
             $table->id();
+            $table->string('title')->nullable()->index();
+            $table->text('description')->nullable();
+            $table->fullText('description');
             $table->timestamps();
         });
     }
