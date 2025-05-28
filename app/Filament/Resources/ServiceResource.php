@@ -54,7 +54,15 @@ class ServiceResource extends Resource
                 ->numeric()
                 ->prefix('$')
                 ->nullable(),
+            Forms\Components\Select::make('currency_id')
+                ->label('Currency')
+                ->relationship('currency', 'name')
+                ->required()
+                ->searchable()
+                ->preload()
+                ->columnSpanFull(),
         ]);
+
     }
 
     public static function table(Table $table): Table
@@ -76,7 +84,10 @@ class ServiceResource extends Resource
                 ImageColumn::make('image')
                     ->getStateUsing(fn ($record) => asset('storage/' . $record->image))
                     ->height(60)
-                    ->width(60)
+                    ->width(60),
+                TextColumn::make('currency.name')
+                    ->label('Currency')
+                    ->searchable(),
 
             ])
             ->filters([

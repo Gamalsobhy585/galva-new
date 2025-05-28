@@ -16,7 +16,8 @@ return new class extends Migration
             $table->fullText('description');            
             $table->string('image')->nullable();
             $table->decimal('price', 8, 2)->nullable()->index();
-            $table->foreignId('currency_id')->constrained('currencies')->onDelete('cascade')->onUpdate('cascade');
+            $table->unsignedBigInteger('currency_id');
+            $table->foreign('currency_id')->references('id')->on('currencies')->cascadeOnDelete();
             $table->timestamps();
         });
     }

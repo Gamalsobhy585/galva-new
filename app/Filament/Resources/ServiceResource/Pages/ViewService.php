@@ -19,6 +19,12 @@ class ViewService extends ViewRecord
             ImageEntry::make('image')
                 ->getStateUsing(fn ($record) => asset('storage/' . $record->image))
                 ->height(200),
+            TextEntry::make('price')
+                ->formatStateUsing(fn ($state) => '$' . number_format($state, 2)),
+            TextEntry::make('currency.name')
+                ->label('Currency')
+                ->formatStateUsing(fn ($state) => $state ? $state : 'N/A'),
+                
         ]);
     }
 }
