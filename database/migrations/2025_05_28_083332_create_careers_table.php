@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('careers', function (Blueprint $table) {
             $table->id();
+            $table->string('job_title')->index();
+            $table->text('job_description');
+            $table->fullText('job_description');
             $table->timestamps();
         });
     }
