@@ -105,4 +105,9 @@ class NewsResource extends Resource
             'view' => Pages\ViewNews::route('/{record}'),
         ];
     }
+
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
 }

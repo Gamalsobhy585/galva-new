@@ -78,4 +78,10 @@ class CareerResource extends Resource
             'view' => Pages\ViewCareer::route('/{record}'),
         ];
     }
+
+
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
 }

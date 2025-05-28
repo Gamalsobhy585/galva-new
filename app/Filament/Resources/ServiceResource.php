@@ -120,4 +120,8 @@ class ServiceResource extends Resource
             'view' => Pages\ViewService::route('/{record}'),
         ];
     }
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
 }

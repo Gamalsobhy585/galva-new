@@ -88,12 +88,12 @@ protected static ?string $navigationIcon = 'heroicon-o-information-circle';
             'view' => Pages\ViewAbout::route('/{record}'),
         ];
     }
-    protected function getSavedNotification(): ?Notification
+
+
+    public static function getNavigationBadge(): ?string
     {
-        return Notification::make()
-            ->success()
-            ->title('About section saved')
-            ->body($this->record->is_active ? 'This section is now active. All other sections have been deactivated.' : 'Section saved successfully.');
+        return static::getModel()::count();
     }
+
 
 }
