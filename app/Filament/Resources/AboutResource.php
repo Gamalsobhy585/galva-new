@@ -7,8 +7,7 @@ use App\Filament\Resources\AboutResource\RelationManagers;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
-
-
+use Filament\Forms\Components\Toggle;
 use App\Models\About;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -17,6 +16,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Tables\Columns\IconColumn;
 
 class AboutResource extends Resource
 {
@@ -36,6 +36,10 @@ protected static ?string $navigationIcon = 'heroicon-o-information-circle';
             Textarea::make('description')
                 ->required()
                 ->rows(5),
+            Toggle::make('is_active')
+            ->label('Active')
+            ->default(false)
+            ->helperText('Only one about section can be active at a time'),
             ]);
     }
 
@@ -49,17 +53,18 @@ protected static ?string $navigationIcon = 'heroicon-o-information-circle';
                  TextColumn::make('description')
                     ->limit(50)
                     ->searchable(),
-                    
+                IconColumn::make('is_active')
+                    ->boolean()
+                    ->label('Active')
+                    ->sortable(),
 
-                //
             ])
-            ->filters([
-                //
-            ])
+
             ->actions([
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),             ])
+                Tables\Actions\DeleteAction::make(),        
+            ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
@@ -82,6 +87,13 @@ protected static ?string $navigationIcon = 'heroicon-o-information-circle';
             'edit' => Pages\EditAbout::route('/{record}/edit'),
             'view' => Pages\ViewAbout::route('/{record}'),
         ];
+    }
+    protected function getSavedNotification(): ?Notification
+    {
+        return Notification::make()
+            ->success()
+            ->title('About section saved')
+            ->body($this->record->is_active ? 'This section is now active. All other sections have been deactivated.' : 'Section saved successfully.');
     }
 
 }
