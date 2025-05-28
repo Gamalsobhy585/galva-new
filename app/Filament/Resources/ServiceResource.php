@@ -36,19 +36,19 @@ class ServiceResource extends Resource
                 ->required()
                 ->rows(5),
 
-FileUpload::make('image')
-    ->label('Service Image')
-    ->directory('services')           
-    ->visibility('public')          
-    ->image()                         
-    ->imagePreviewHeight('200')       
-    ->enableOpen()                   
-    ->preserveFilenames()             
-    ->getUploadedFileNameForStorageUsing(function ($file) {
-        return (string) str()->uuid() . '.' . $file->getClientOriginalExtension();
-    })
-    ->required(false)
-    ->columnSpanFull(),
+            FileUpload::make('image')
+                ->label('Service Image')
+                ->directory('services')           
+                ->visibility('public')          
+                ->image()                         
+                ->imagePreviewHeight('200')       
+                ->enableOpen()                   
+                ->preserveFilenames()             
+                ->getUploadedFileNameForStorageUsing(function ($file) {
+                    return (string) str()->uuid() . '.' . $file->getClientOriginalExtension();
+                })
+                ->required(false)
+                ->columnSpanFull(),
 
             TextInput::make('price')
                 ->numeric()
@@ -90,7 +90,7 @@ FileUpload::make('image')
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+                Tables\Actions\DeleteBulkAction::make(),
                 ]),
             ]);
     }
