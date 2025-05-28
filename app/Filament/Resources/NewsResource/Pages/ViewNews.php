@@ -1,15 +1,15 @@
 <?php
-namespace App\Filament\Resources\ServiceResource\Pages;
+namespace App\Filament\Resources\NewsResource\Pages;
 
-use App\Filament\Resources\ServiceResource;
+use App\Filament\Resources\NewsResource;
 use Filament\Resources\Pages\ViewRecord;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Infolists\Components\ImageEntry;
 use Filament\Infolists\Infolist;
 
-class ViewService extends ViewRecord
+class ViewNews extends ViewRecord
 {
-    protected static string $resource = ServiceResource::class;
+    protected static string $resource = NewsResource::class;
 
     public function infolist(Infolist $infolist): Infolist
     {
