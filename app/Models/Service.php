@@ -11,10 +11,15 @@ class Service extends Model
         'description',
         'image',
         'price',
+        'currency_id',
     ];
     protected $casts = [
         'created_at' => 'datetime',
         'updated_at' => 'datetime',
     ];
     protected $table = 'services';
+    public function currency()
+    {
+        return $this->belongsTo(Currency::class);
+    }
 }

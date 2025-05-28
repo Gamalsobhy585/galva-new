@@ -6,9 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
+
     public function up(): void
     {
         Schema::create('services', function (Blueprint $table) {
@@ -18,13 +16,12 @@ return new class extends Migration
             $table->fullText('description');            
             $table->string('image')->nullable();
             $table->decimal('price', 8, 2)->nullable()->index();
+            $table->foreignId('currency_id')->constrained('currencies')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
+
     public function down(): void
     {
         Schema::dropIfExists('services');
