@@ -90,10 +90,10 @@ protected static ?string $navigationIcon = 'heroicon-o-information-circle';
     }
 
 
-    public static function getNavigationBadge(): ?string
-    {
-        return static::getModel()::count();
-    }
+    // public static function getNavigationBadge(): ?string
+    // {
+    //     return static::getModel()::count();
+    // }
 
 
 }
