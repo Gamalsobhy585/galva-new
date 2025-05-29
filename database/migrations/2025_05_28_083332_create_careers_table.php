@@ -20,6 +20,7 @@ return new class extends Migration
             $table->text('job_description_ar');
             $table->fullText('job_description_ar');
             $table->boolean('is_active')->default(false);
+            $table->softDeletes(); 
             $table->timestamps();
         });
     }
