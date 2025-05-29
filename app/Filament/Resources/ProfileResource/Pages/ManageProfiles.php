@@ -12,7 +12,8 @@ use Filament\Actions\Action;
 use Filament\Notifications\Notification;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Validation\Rules\Password;
+use Illuminate\Validation\Rules\Password as ValidationPassword;
+use Rawilk\FilamentPasswordInput\Password as PasswordInput;
 
 class ManageProfile extends Page implements HasForms
 {
@@ -36,24 +37,21 @@ class ManageProfile extends Page implements HasForms
                 Forms\Components\Section::make('Update Password')
                     ->description('Change your account password')
                     ->schema([
-                        Forms\Components\TextInput::make('current_password')
+                        PasswordInput::make('current_password')
                             ->label('Current Password')
-                            ->password()
                             ->required()
                             ->rules(['current_password'])
                             ->autocomplete('current-password'),
                             
-                        Forms\Components\TextInput::make('password')
+                        PasswordInput::make('password')
                             ->label('New Password')
-                            ->password()
                             ->required()
-                            ->rule(Password::default())
+                            ->rule(ValidationPassword::default())
                             ->same('password_confirmation')
                             ->autocomplete('new-password'),
                             
-                        Forms\Components\TextInput::make('password_confirmation')
+                        PasswordInput::make('password_confirmation')
                             ->label('Confirm New Password')
-                            ->password()
                             ->required()
                             ->autocomplete('new-password'),
                     ])
