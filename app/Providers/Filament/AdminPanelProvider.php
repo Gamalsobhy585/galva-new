@@ -11,6 +11,7 @@ use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
 use Filament\Widgets;
+use Filament\Navigation\UserMenuItem;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
@@ -22,10 +23,6 @@ class AdminPanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
     {
-
-
-        // make the nav with name Galva instead of laravel
-        
         return $panel
             ->default()
             ->id('admin')
@@ -36,7 +33,17 @@ class AdminPanelProvider extends PanelProvider
             ->colors([
                 'primary' => Color::Amber,
             ])
-            
+            // Add dark mode support
+            ->darkMode()
+            // Customize user menu items
+            ->userMenuItems([
+                'profile' => UserMenuItem::make()
+                    ->label('Update Profile')
+                    ->url('/admin/profile')
+                    ->icon('heroicon-o-user-circle'),
+                // The logout item is included by default, but you can customize it
+                'logout' => UserMenuItem::make()->label('Sign Out'),
+            ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
