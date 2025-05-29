@@ -13,9 +13,13 @@ return new class extends Migration
     {
         Schema::create('careers', function (Blueprint $table) {
             $table->id();
-            $table->string('job_title')->index();
-            $table->text('job_description');
-            $table->fullText('job_description');
+            $table->string('job_title_en')->index();
+            $table->text('job_description_en');
+            $table->fullText('job_description_en');
+            $table->string('job_title_ar')->index();
+            $table->text('job_description_ar');
+            $table->fullText('job_description_ar');
+            $table->boolean('is_active')->default(false);
             $table->timestamps();
         });
     }

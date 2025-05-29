@@ -7,9 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class About extends Model
 {
     protected $fillable = [
-        'title',
-        'description',
-        'is_active'
+        'title_en',
+        'description_en',
+        'is_active',
+        'title_ar',
+        'description_ar',
     ];
     protected $casts = [
         'created_at' => 'datetime',

@@ -26,25 +26,43 @@ class CareerResource extends Resource
     public static function form(Form $form): Form
     {
                return $form->schema([
-            TextInput::make('job_title')
+            TextInput::make('job_title_en')
                 ->required()
                 ->maxLength(255),
 
-            Textarea::make('job_description')
+            Textarea::make('job_description_en')
                 ->required()
                 ->rows(5),
+            TextInput::make('job_title_ar')
+                ->required()
+                ->maxLength(255),
+            Textarea::make('job_description_ar')
+                ->required()
+                ->rows(5),
+            Forms\Components\Toggle::make('is_active')
+                ->label('Active')
+                ->default(false)
             ]);
     }
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
-                TextColumn::make('job_title')
+                TextColumn::make('job_title_en')
                     ->sortable()
                     ->searchable(),
-                 TextColumn::make('job_description')
+                 TextColumn::make('job_description_en')
                     ->limit(50)
                     ->searchable(),
+                TextColumn::make('job_title_ar')
+                    ->sortable()
+                    ->searchable(),
+                TextColumn::make('job_description_ar')
+                    ->limit(50)
+                    ->searchable(),
+                TextColumn::make('is_active')
+                    ->label('Active')
+                    ->boolean(),
 
                 //
             ])

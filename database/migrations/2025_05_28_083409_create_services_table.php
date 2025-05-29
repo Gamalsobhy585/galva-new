@@ -11,9 +11,12 @@ return new class extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->index();
-            $table->text('description');
-            $table->fullText('description');            
+            $table->string('title_en')->index();
+            $table->text('description_en');
+            $table->fullText('description_en');
+            $table->string('title_ar')->index();
+            $table->text('description_ar');
+            $table->fullText('description_ar');            
             $table->string('image')->nullable();
             $table->decimal('price', 8, 2)->nullable()->index();
             $table->unsignedBigInteger('currency_id');

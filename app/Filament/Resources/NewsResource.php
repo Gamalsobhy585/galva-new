@@ -30,11 +30,17 @@ class NewsResource extends Resource
     {
         return $form
             ->schema([
-                 TextInput::make('title')
+                 TextInput::make('title_en')
                 ->required()
                 ->maxLength(255),
 
-            Textarea::make('description')
+            Textarea::make('description_en')
+                ->required()
+                ->rows(5),
+            TextInput::make('title_ar')
+                ->required()
+                ->maxLength(255),
+            Textarea::make('description_ar')
                 ->required()
                 ->rows(5),
 
@@ -60,20 +66,28 @@ class NewsResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('title')
+                TextColumn::make('title_en')
                     ->sortable()
                     ->searchable(),
 
 
 
-                TextColumn::make('description')
+                TextColumn::make('description_en')
                     ->limit(50)
                     ->searchable(),
 
                 ImageColumn::make('image')
                     ->getStateUsing(fn ($record) => asset('storage/' . $record->image))
                     ->height(60)
-                    ->width(60)
+                    ->width(60),
+                TextColumn::make('title_ar')
+                    ->sortable()
+                    ->searchable(),
+                TextColumn::make('description_ar')
+                    ->limit(50)
+                    ->searchable()
+                    ->sortable(),
+                
             ])
             ->filters([
                 //
