@@ -16,6 +16,11 @@ use App\Filament\Resources\ServiceResource\Pages;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\UploadedFile;
+use Symfony\Component\HttpFoundation\File\File;
+
 
 class ServiceResource extends Resource
 {
@@ -42,17 +47,22 @@ class ServiceResource extends Resource
             Textarea::make('description_ar')
                 ->required()
                 ->rows(5),
-
             FileUpload::make('image')
                 ->label('Service Image')
-                ->directory('services')           
-                ->visibility('public')          
-                ->image()                         
-                ->imagePreviewHeight('200')       
-                ->enableOpen()                   
-                ->preserveFilenames()             
-                ->getUploadedFileNameForStorageUsing(function ($file) {
-                    return (string) str()->uuid() . '.' . $file->getClientOriginalExtension();
+                ->directory('services')
+                ->visibility('public')
+                ->image()
+                ->imagePreviewHeight('200')
+                ->enableOpen()
+                ->preserveFilenames(false)
+                ->getUploadedFileNameForStorageUsing(function ($file): string {
+                    return (string) str()->uuid() . '.webp';
+                })
+                ->mutateUploadedFileUsing(function (UploadedFile $file) {
+                    $webpImage = Image::make($file)->encode('webp', 85);
+                    $tmpPath = storage_path('app/tmp/' . str()->uuid() . '.webp');
+                    file_put_contents($tmpPath, $webpImage);
+                    return new File($tmpPath);
                 })
                 ->required(false)
                 ->columnSpanFull(),
