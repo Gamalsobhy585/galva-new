@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('infos', function (Blueprint $table) {
             $table->id();
+            $table->integer('projects_count')->default(0);
+            $table->integer('customers_count')->default(0);
+            $table->integer('tons_per_month')->default(0);
             $table->timestamps();
         });
     }

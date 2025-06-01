@@ -23,7 +23,23 @@ class InfoResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('projects_count')
+                    ->label('Projects Count')
+                    ->required()
+                    ->numeric()
+                    ->default(0),
+                
+                Forms\Components\TextInput::make('customers_count')
+                    ->label('Customers Count')
+                    ->required()
+                    ->numeric()
+                    ->default(0),
+                
+                Forms\Components\TextInput::make('tons_per_month')
+                    ->label('Tons Per Month')
+                    ->required()
+                    ->numeric()
+                    ->default(0),
             ]);
     }
 
@@ -31,18 +47,40 @@ class InfoResource extends Resource
     {
         return $table
             ->columns([
-                //
+                
+                Tables\Columns\TextColumn::make('projects_count')
+                    ->label('Projects Count')
+                    ->sortable()
+                    ->searchable(),
+                
+                Tables\Columns\TextColumn::make('customers_count')
+                    ->label('Customers Count')
+                    ->sortable()
+                    ->searchable(),
+                
+                Tables\Columns\TextColumn::make('tons_per_month')
+                    ->label('Tons Per Month')
+                    ->sortable()
+                    ->searchable(),
+                
+                Tables\Columns\TextColumn::make('created_at')
+                    ->label('Created At')
+                    ->dateTime()
+                    ->sortable()
+                    ->searchable(),
+            ])->filters([
+            ])->headerActions([
+                Tables\Actions\CreateAction::make(),
             ])
             ->filters([
-                //
+                
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-            ])
+
+                              ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
+               
             ]);
     }
 
@@ -53,10 +91,16 @@ class InfoResource extends Resource
         ];
     }
 
+    public static function canCreate(): bool
+{
+    return \App\Models\Info::count() === 0;
+}
+
+
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListInfos::route('/'),
+            'index' => Pages\ViewInfo::route('/'), 
             'create' => Pages\CreateInfo::route('/create'),
             'edit' => Pages\EditInfo::route('/{record}/edit'),
         ];
