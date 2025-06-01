@@ -33,12 +33,12 @@ protected static ?string $navigationIcon = 'heroicon-o-information-circle';
                 ->required()
                 ->maxLength(255),
 
-            Textarea::make('description_en')
-                ->required()
-                ->rows(5),
-            TextInput::make('title_ar')
+                TextInput::make('title_ar')
                 ->required()
                 ->maxLength(255),
+                Textarea::make('description_en')
+                    ->required()
+                    ->rows(5),
             Textarea::make('description_ar')
                 ->required()
                 ->rows(5),

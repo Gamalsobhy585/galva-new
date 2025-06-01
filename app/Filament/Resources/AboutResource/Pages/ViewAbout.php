@@ -14,8 +14,10 @@ class ViewAbout extends ViewRecord
     public function infolist(Infolist $infolist): Infolist
     {
         return $infolist->schema([
-            TextEntry::make('title'),
-            TextEntry::make('description'),
+            TextEntry::make('title_en'),
+            TextEntry::make('title_ar'),
+            TextEntry::make('description_en'),
+            TextEntry::make('description_ar'),
            
         ]);
     }
