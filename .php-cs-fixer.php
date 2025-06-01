@@ -8,9 +8,10 @@ return PhpCsFixer\Config::create()
     ->setRiskyAllowed(true)
     ->setFinder($finder)
     ->setRules([
-        '@PSR12' => true, // Enforce PSR-12 code style
-        'no_unused_imports' => true, // Remove unused `use` statements
-        'no_empty_comment' => true, // Remove empty comments
+        '@PSR12' => true, 
+        'no_unused_imports' => true,
+        'no_empty_comment' => true,
+        'no_comments' => true, 
         'no_trailing_whitespace' => true,
         'single_blank_line_at_eof' => true,
         'blank_line_after_namespace' => true,

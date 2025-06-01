@@ -16,7 +16,6 @@ class ProfileResource extends Resource
     
     protected static ?string $slug = 'profile';
 
-    // Hide from navigation since we're adding it to user menu
     protected static bool $shouldRegisterNavigation = false;
 
     public static function getPages(): array

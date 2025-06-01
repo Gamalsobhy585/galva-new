@@ -15,6 +15,10 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\Toggle;
+use Filament\Tables\Columns\IconColumn;
+
+
 
 class CareerResource extends Resource
 {
@@ -30,16 +34,16 @@ class CareerResource extends Resource
                 ->required()
                 ->maxLength(255),
 
-            Textarea::make('job_description_en')
-                ->required()
-                ->rows(5),
-            TextInput::make('job_title_ar')
+                TextInput::make('job_title_ar')
                 ->required()
                 ->maxLength(255),
+                Textarea::make('job_description_en')
+                    ->required()
+                    ->rows(5),
             Textarea::make('job_description_ar')
                 ->required()
                 ->rows(5),
-            Forms\Components\Toggle::make('is_active')
+            Toggle::make('is_active')
                 ->label('Active')
                 ->default(false)
             ]);
@@ -51,16 +55,16 @@ class CareerResource extends Resource
                 TextColumn::make('job_title_en')
                     ->sortable()
                     ->searchable(),
-                 TextColumn::make('job_description_en')
-                    ->limit(50)
-                    ->searchable(),
-                TextColumn::make('job_title_ar')
+                    TextColumn::make('job_title_ar')
                     ->sortable()
                     ->searchable(),
+                    TextColumn::make('job_description_en')
+                       ->limit(50)
+                       ->searchable(),
                 TextColumn::make('job_description_ar')
                     ->limit(50)
                     ->searchable(),
-                TextColumn::make('is_active')
+                IconColumn::make('is_active')
                     ->label('Active')
                     ->boolean(),
 
@@ -98,8 +102,4 @@ class CareerResource extends Resource
     }
 
 
-    // public static function getNavigationBadge(): ?string
-    // {
-    //     return static::getModel()::count();
-    // }
 }

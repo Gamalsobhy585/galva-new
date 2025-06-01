@@ -5,6 +5,7 @@ namespace App\Filament\Widgets;
 use App\Models\Service;
 use App\Models\Career;
 use App\Models\Contact;
+use App\Models\Client;
 use App\Models\News;
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
@@ -37,6 +38,12 @@ class StatsOverview extends BaseWidget
                 ->descriptionIcon('heroicon-s-newspaper')
                 ->chart([5, 8, 6, 9, 12]) // Sample trend data
                 ->color('fuchsia'),
+                Stat::make('Our Clients',Client::count())
+                ->description('Number of clients we serve')
+                ->descriptionIcon('heroicon-s-users')
+                ->chart([3, 4, 5, 6, 7]) // Sample trend data
+                ->color('purple'),
         ];
+
     }
 }
