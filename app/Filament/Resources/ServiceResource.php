@@ -102,7 +102,7 @@ class ServiceResource extends Resource
                     ->searchable(),
 
                 ImageColumn::make('image')
-                    ->getStateUsing(fn ($record) => asset('storage/services' . $record->image))
+                    ->getStateUsing(fn ($record) => asset('storage/services/' . $record->image))
                     ->height(60)
                     ->width(60),
                 TextColumn::make('currency.name')

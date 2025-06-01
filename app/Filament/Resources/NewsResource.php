@@ -86,7 +86,7 @@ class NewsResource extends Resource
                     ->sortable(),
 
                 ImageColumn::make('image')
-                    ->getStateUsing(fn ($record) => asset('storage/news' . $record->image))
+                    ->getStateUsing(fn ($record) => asset('storage/news/' . $record->image))
                     ->height(60)
                     ->width(60),
 
