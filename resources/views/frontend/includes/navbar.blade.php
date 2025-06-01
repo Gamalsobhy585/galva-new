@@ -1,31 +1,3 @@
-<!-- Top Bar -->
-{{--<div id="top-bar" class="style-2">--}}
-{{--    <div id="top-bar-inner" class="container">--}}
-{{--        <div class="top-bar-inner-wrap">--}}
-
-{{--            <div class="top-bar-socials">--}}
-{{--                <div class="inner">--}}
-{{--                        <span class="icons">--}}
-{{--                            <a href="#" title="Linkedin"><span class="fa fa-linkedin" aria-hidden="true"></span></a>--}}
-{{--                            <a href="#" title="Facebook"><span class="fa fa-facebook" aria-hidden="true"></span></a>--}}
-{{--                        </span>--}}
-{{--                </div>--}}
-{{--            </div><!-- /.top-bar-socials -->--}}
-
-{{--            <div class="top-bar-content">--}}
-{{--                    <span id="top-bar-text">--}}
-{{--                        <i class="fa fa-phone-square"></i>+1 718-999-3939--}}
-{{--                        <i class="fa fa-envelope"></i>info@eecgalva.com--}}
-{{--                        <i class="fa fa-clock-o"></i>Mon-Fri: 7:00 - 3:30--}}
-{{--                    </span><!-- /#top-bar-text -->--}}
-{{--            </div><!-- /.top-bar-content -->--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</div><!-- /#top-bar -->--}}
-
-
-
-
 <!-- Header -->
 <header id="site-header" class="header-front-page style-5">
     <div id="site-header-inner" class="container">
@@ -40,14 +12,7 @@
                     </a>
                 </ul>
 
-
-                {{--                <div class="hero-button">--}}
-
-                {{--                </div>--}}
-            </nav><!-- /#main-nav -->
-
-
-
+            </nav>
 
             <div id="site-logo" class="clearfix">
                 <div id="site-logo-inner">
@@ -58,13 +23,13 @@
                              data-retina="{{ asset('assets/website_images/logo-galva-2.png') }}">
                     </a>
                 </div>
-            </div><!-- /#site-logo -->
+            </div>
 
-            <div class="mobile-button"><span></span></div><!-- //mobile menu button -->
+            <div class="mobile-button"><span></span></div>
 
             <nav id="main-nav" class="main-nav">
                 <ul class="menu">
-                    <a class="wprt-button outline small very-light rounded-30px margin-top-5" href="#">Contact Us</a>
+                    <a class="wprt-button outline small very-light rounded-30px margin-top-5" href="/contact-us">Contact Us</a>
 
 
                     <li class="menu-item menu-item-has-children"><a href="#">EN</a>
@@ -73,17 +38,8 @@
                         </ul>
                     </li>
                 </ul>
-
-
-                {{--                <div class="hero-button">--}}
-
-                {{--                </div>--}}
-            </nav><!-- /#main-nav -->
-
-
-            {{--            <a href="#" class="wprt-button small">Contact Us</a>--}}
-
-
+        
+            </nav>
             <div id="header-search">
                 <a class="header-search-icon" href="#"><span class="fa fa-search"></span></a>
 
@@ -93,13 +49,13 @@
                     <button type="submit" class="header-search-submit" title="Search">Search</button>
                     <input type="hidden" name="post_type" value="post">
                 </form>
-            </div><!-- /#header-search -->
+            </div>
 
         </div>
-    </div><!-- /#site-header-inner -->
+    </div>
 
 
-</header><!-- /#site-header -->
+</header>
 
 <span class="custom-border-bottom"></span>
 
