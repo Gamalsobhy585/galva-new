@@ -50,11 +50,7 @@ class EditNews extends EditRecord
                         ->required()
                         ->columnSpanFull(),
                     
-                    TextInput::make('price')
-                        ->label('Price')
-                        ->numeric()
-                        ->required(),
-                    
+
                     ViewField::make('current_image')
                         ->label('Current Image')
                         ->view('filament.components.current-image', [

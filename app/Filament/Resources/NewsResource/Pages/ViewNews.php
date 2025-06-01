@@ -33,13 +33,10 @@ class ViewNews extends ViewRecord
                         ->html()
                         ->columnSpanFull(),
                     
-                    TextEntry::make('price')
-                        ->label('Price')
-                        ->formatStateUsing(fn ($state) => number_format($state, 2)),
-                    
+   
                     ImageEntry::make('image')
                         ->getStateUsing(fn ($record) => asset('storage/news/' . $record->image))
-                        ->height(300)
+                        ->height(100)
                         ->label('News Image')
                         ->columnSpanFull(),
                 ])->columns(2)
