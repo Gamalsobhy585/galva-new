@@ -12,7 +12,6 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Storage;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
@@ -30,41 +29,32 @@ class ClientResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
-    public static function form(Form $form): Form
-    {
-        return $form
-            ->schema([
-                TextInput::make('name_en')
+public static function form(Form $form): Form
+{
+    return $form
+        ->schema([
+            TextInput::make('name_en')
                 ->required()
                 ->maxLength(255),
-                TextInput::make('name_ar')
+            TextInput::make('name_ar')
                 ->required()
                 ->maxLength(255),
-                FileUpload::make('image')
-                    ->label('Client Image')
-                    ->directory('clients')
-                    ->visibility('public')
-                    ->image()
-                    ->imagePreviewHeight('200')
-                    ->enableOpen()
-                    ->preserveFilenames(false)
-                    ->saveUploadedFileUsing(function (UploadedFile $file, $get, $set) {
-                        // Generate unique filename
-                        $filename = str()->uuid() . '.webp';
-                        $path = 'clients/' . $filename;
-                        
-                        // Convert to WebP
-                        $webpImage = Image::make($file)->encode('webp', 85);
-                        
-                        // Store the WebP image
-                        Storage::disk('public')->put($path, $webpImage);
-                        
-                        return $filename; // Return just the filename, not the full path
-                    })
-                    ->required(false)
-                    ->columnSpanFull(),
-            ]);
-    }
+           FileUpload::make('logo')
+            ->label('Client Image')
+            ->directory('clients')
+            ->visibility('public')
+            ->image()
+            ->imagePreviewHeight('200')
+            ->enableOpen()
+            ->preserveFilenames(false)
+            ->acceptedFileTypes(['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'])
+            ->nullable()
+            ->getUploadedFileNameForStorageUsing(function ($file) {
+                    return (string) str()->uuid() . '.' . $file->getClientOriginalExtension();
+                })
+            ->columnSpanFull(),
+        ]);
+}
 
     public static function table(Table $table): Table
     {
@@ -79,20 +69,21 @@ class ClientResource extends Resource
                     ->label('Name (AR)')
                     ->searchable()
                     ->sortable(),
-                ImageColumn::make('image')
-                    ->getStateUsing(fn ($record) => asset('storage/' . $record->image))
-                    ->height(60)
-                    ->width(60),
+            ImageColumn::make('logo')
+                ->getStateUsing(fn ($record) => asset('storage/clients/' . $record->logo))
+                ->height(60)
+                ->width(60),
+
 
                 
             ])
             ->filters([
-                //
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),             ])
+                Tables\Actions\DeleteAction::make(),   
+                          ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
@@ -103,7 +94,6 @@ class ClientResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
         ];
     }
 

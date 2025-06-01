@@ -16,7 +16,6 @@ use App\Filament\Resources\ServiceResource\Pages;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\UploadedFile;
 use Symfony\Component\HttpFoundation\File\File;
@@ -37,32 +36,30 @@ class ServiceResource extends Resource
                 ->required()
                 ->maxLength(255),
 
-            Textarea::make('description_en')
-                ->required()
-                ->rows(5),
             TextInput::make('title_ar')
 
                 ->required()
                 ->maxLength(255),
+
+            Textarea::make('description_en')
+                ->required()
+                ->rows(5),
+
             Textarea::make('description_ar')
                 ->required()
                 ->rows(5),
             FileUpload::make('image')
                 ->label('Service Image')
-                ->directory('services')
-                ->visibility('public')
-                ->image()
-                ->imagePreviewHeight('200')
-                ->enableOpen()
-                ->preserveFilenames(false)
-                ->getUploadedFileNameForStorageUsing(function ($file): string {
-                    return (string) str()->uuid() . '.webp';
-                })
-                ->mutateUploadedFileUsing(function (UploadedFile $file) {
-                    $webpImage = Image::make($file)->encode('webp', 85);
-                    $tmpPath = storage_path('app/tmp/' . str()->uuid() . '.webp');
-                    file_put_contents($tmpPath, $webpImage);
-                    return new File($tmpPath);
+                ->directory('services')           
+                ->visibility('public')          
+                ->image()                         
+                ->imagePreviewHeight('200')       
+                ->enableOpen()                   
+                ->preserveFilenames()    
+                ->acceptedFileTypes(['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'])
+         
+                ->getUploadedFileNameForStorageUsing(function ($file) {
+                    return (string) str()->uuid() . '.' . $file->getClientOriginalExtension();
                 })
                 ->required(false)
                 ->columnSpanFull(),
@@ -77,7 +74,7 @@ class ServiceResource extends Resource
                 ->required()
                 ->searchable()
                 ->preload()
-                ->columnSpanFull(),
+                ,
         ]);
 
     }
@@ -105,7 +102,7 @@ class ServiceResource extends Resource
                     ->searchable(),
 
                 ImageColumn::make('image')
-                    ->getStateUsing(fn ($record) => asset('storage/' . $record->image))
+                    ->getStateUsing(fn ($record) => asset('storage/services' . $record->image))
                     ->height(60)
                     ->width(60),
                 TextColumn::make('currency.name')
@@ -143,8 +140,5 @@ class ServiceResource extends Resource
             'view' => Pages\ViewService::route('/{record}'),
         ];
     }
-    // public static function getNavigationBadge(): ?string
-    // {
-    //     return static::getModel()::count();
-    // }
+
 }

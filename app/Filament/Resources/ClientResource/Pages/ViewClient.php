@@ -18,8 +18,8 @@ class ViewClient extends ViewRecord
                 ->label('Name (English)'),
             TextEntry::make('name_ar')
                 ->label('Name (Arabic)'),
-            ImageEntry::make('image')
-                ->getStateUsing(fn ($record) => asset('storage/' . $record->image))
+            ImageEntry::make('logo')
+                ->getStateUsing(fn ($record) => asset('storage/clients/' . $record->logo))
                 ->height(200)
                 ->label('Client Image'),
           
