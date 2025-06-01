@@ -179,223 +179,23 @@
                              style="background-color: white !important; border-radius: 20px; !important;">
 
 
-                            <div class="cbp-item">
-                                <div class="member">
-                                    <div class="inner">
-                                        <div class="image">
-                                            <div class="inner">
-                                                <img src="{{ asset('assets/website_images/customers/logos-16.jpg') }}"
-                                                     alt="image" class="customer-img"/>
+                            @foreach ($clients as $client)
+                                <div class="cbp-item">
+                                    <div class="member">
+                                        <div class="inner">
+                                            <div class="image">
+                                                <div class="inner">
+                                                    <img src="{{ asset('storage/clients/' . $client->logo) }}" alt="{{ $client->name_en }}" class="customer-img"/>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            @endforeach
 
 
-                            <div class="cbp-item">
-                                <div class="member">
-                                    <div class="inner">
-                                        <div class="image">
-                                            <div class="inner">
-                                                <img src="{{ asset('assets/website_images/customers/logos-9.jpg') }}"
-                                                     alt="image" class="customer-img"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
-
-                            <div class="cbp-item">
-                                <div class="member">
-                                    <div class="inner">
-                                        <div class="image">
-                                            <div class="inner">
-                                                <img src="{{ asset('assets/website_images/customers/logos-4.jpg') }}"
-                                                     alt="image" class="customer-img"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="cbp-item">
-                                <div class="member">
-                                    <div class="inner">
-                                        <div class="image">
-                                            <div class="inner">
-                                                <img src="{{ asset('assets/website_images/customers/logos-10.jpg') }}"
-                                                     alt="image" class="customer-img"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="cbp-item">
-                                <div class="member">
-                                    <div class="inner">
-                                        <div class="image">
-                                            <div class="inner">
-                                                <img src="{{ asset('assets/website_images/customers/logos-17.jpg') }}"
-                                                     alt="image" class="customer-img"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="cbp-item">
-                                <div class="member">
-                                    <div class="inner">
-                                        <div class="image">
-                                            <div class="inner">
-                                                <img src="{{ asset('assets/website_images/customers/logos-19.jpg') }}"
-                                                     alt="image" class="customer-img"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="cbp-item">
-                                <div class="member">
-                                    <div class="inner">
-                                        <div class="image">
-                                            <div class="inner">
-                                                <img src="{{ asset('assets/website_images/customers/logos-8.jpg') }}"
-                                                     alt="image" class="customer-img"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="cbp-item">
-                                <div class="member">
-                                    <div class="inner">
-                                        <div class="image">
-                                            <div class="inner">
-                                                <img src="{{ asset('assets/website_images/customers/logos-1.jpg') }}"
-                                                     alt="image" class="customer-img"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="cbp-item">
-                                <div class="member">
-                                    <div class="inner">
-                                        <div class="image">
-                                            <div class="inner">
-                                                <img src="{{ asset('assets/website_images/customers/logos-2.jpg') }}"
-                                                     alt="image" class="customer-img"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="cbp-item">
-                                <div class="member">
-                                    <div class="inner">
-                                        <div class="image">
-                                            <div class="inner">
-                                                <img src="{{ asset('assets/website_images/customers/logos-5.jpg') }}"
-                                                     alt="image" class="customer-img"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="cbp-item">
-                                <div class="member">
-                                    <div class="inner">
-                                        <div class="image">
-                                            <div class="inner">
-                                                <img src="{{ asset('assets/website_images/customers/logos-11.jpg') }}"
-                                                     alt="image" class="customer-img"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="cbp-item">
-                                <div class="member">
-                                    <div class="inner">
-                                        <div class="image">
-                                            <div class="inner">
-                                                <img src="{{ asset('assets/website_images/customers/logos-12.jpg') }}"
-                                                     alt="image" class="customer-img"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="cbp-item">
-                                <div class="member">
-                                    <div class="inner">
-                                        <div class="image">
-                                            <div class="inner">
-                                                <img src="{{ asset('assets/website_images/customers/logos-13.jpg') }}"
-                                                     alt="image" class="customer-img"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="cbp-item">
-                                <div class="member">
-                                    <div class="inner">
-                                        <div class="image">
-                                            <div class="inner">
-                                                <img src="{{ asset('assets/website_images/customers/logos-14.jpg') }}"
-                                                     alt="image" class="customer-img"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="cbp-item">
-                                <div class="member">
-                                    <div class="inner">
-                                        <div class="image">
-                                            <div class="inner">
-                                                <img src="{{ asset('assets/website_images/customers/logos-15.jpg') }}"
-                                                     alt="image" class="customer-img"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="cbp-item">
-                                <div class="member">
-                                    <div class="inner">
-                                        <div class="image">
-                                            <div class="inner">
-                                                <img src="{{ asset('assets/website_images/customers/logos-18.jpg') }}"
-                                                     alt="image" class="customer-img"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                         
 
 
                         </div><!-- /#team-wrap -->
