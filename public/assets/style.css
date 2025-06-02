@@ -87,6 +87,7 @@ html {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -2021,8 +2022,7 @@ p.dropcap span.first-letter {
 
 #main-nav .sub-menu li a {
     display: block;
-    background-color: #fff;
-    color: #4b4b4b;
+    color: #fff;
     font-weight: 500;
     font-size: 0.928em;
     font-family: "Red Hat Display", sans-serif;

@@ -34,9 +34,9 @@
                                 <a class="wprt-button outline small very-light rounded-30px margin-top-5" href="/contact">Contact Us</a>
                             </li>
                             <li class="col-md-2  lang-button" >
-                                <a href="#">EN</a>
-                                <ul class="sub-menu position-absolute bg-white">
-                                <li class="menu-item"><a href="#">AR</a></li>
+                                <a  class="text-white" href="#">EN</a>
+                                <ul class="sub-menu position-absolute text-white">
+                                <li class="text-white"><a href="#">AR</a></li>
                                 </ul>
                             </li>
                             <li class="col-md-5 search-bar ">

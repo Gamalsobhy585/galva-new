@@ -105,35 +105,10 @@
                 </a>
 
 
-                <a class="header-search-icon right-menu-icon-div" href="#">
-                    <img src="{{ asset('assets/website_images/search-icon.svg') }}" alt="" width="20">
-                </a>
-
-
-                <div id="header-search" class="">
-
-
-                    <form role="search" method="get" class="header-search-form custom-search-form" action="#"
-                          style="display: none;">
-
-
-                        <div class="input-group">
-
-
-                            <div class="col-md-1"></div>
-                            <div class="col-md-10">
-                                <input type="text" value="" name="s" class="header-search-field custom-search-btn"
-                                       placeholder="Search...">
-                            </div>
-                            <div class="col-md-1"></div>
-
-                        </div>
 
 
 
-                        <input type="hidden" name="post_type" value="post">
-                    </form>
-                </div>
+              
             </div>
         </div>
 
