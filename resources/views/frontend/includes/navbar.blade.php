@@ -29,7 +29,7 @@
 
             <nav id="main-nav" class="main-nav">
                 <ul class="menu">
-                    <a class="wprt-button outline small very-light rounded-30px margin-top-5" href="/contact-us">Contact Us</a>
+                    <a class="wprt-button outline small very-light rounded-30px margin-top-5" href="/contact">Contact Us</a>
 
 
                     <li class="menu-item menu-item-has-children"><a href="#">EN</a>

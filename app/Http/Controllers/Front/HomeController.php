@@ -24,6 +24,9 @@ class HomeController extends Controller
         $service = Service::with('currency')->findOrFail($id);
         return view('frontend.home.service', compact('service','services'));
     }
+
+
+    
 }
 
 
