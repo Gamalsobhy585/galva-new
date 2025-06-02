@@ -33,7 +33,7 @@
 
 
     <!-- who we are -->
-    <section class="wprt-section">
+    <section id="about" class="wprt-section">
         <div class="container">
             <div class="row">
                 <div class="wprt-spacer" data-desktop="80" data-mobi="60" data-smobi="60" style="height:80px"></div>

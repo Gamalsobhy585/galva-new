@@ -17,11 +17,19 @@
         <div class="widget widget_links">
             <h2 class="widget-title"><span class="">COMPANY LINKS</span></h2>
             <ul class="wprt-links clearfix col4">
-                <li class="style-2"><a href="#">About Us</a></li>
-                <li class="style-2"><a href="#">Hot-Dip Galvanizing</a></li>
-                <li class="style-2"><a href="#">Technical Support</a></li>
-                <li class="style-2"><a href="#">Careers</a></li>
+                <li class="style-2"><a href="#about">About Us</a></li>
+
+                @foreach ($services as $service)
+                    <li class="style-2">
+                        <a target="_blank" href="{{ route('services.show', $service->id) }}">
+                            {{ $service->title_en }}
+                        </a>
+                    </li>
+                @endforeach
+
+                <li class="style-2"><a href="/careers">Careers</a></li>
             </ul>
+
         </div>
     </div>
 
@@ -52,8 +60,8 @@
 
         <div class="widget widget_socials">
             <div class="socials">
-                <a href="#" title="Linkedin"><span class="fa fa-linkedin" aria-hidden="true"></span></a>
-                <a href="#" title="Facebook"><span class="fa fa-facebook" aria-hidden="true"></span></a>
+                <a target="_blank" href="https://www.linkedin.com/company/engineering-co-for-metal-galvanization-eec-galva?originalSubdomain=eg" title="Linkedin"><span class="fa fa-linkedin" aria-hidden="true"></span></a>
+                <a target="_blank" href="https://www.facebook.com/GalvaEEC/" title="Facebook"><span class="fa fa-facebook" aria-hidden="true"></span></a>
             </div>
         </div>
     </div>

@@ -176,7 +176,8 @@
 
             <div class="dropdown-container">
                 @foreach ($services as $service)
-                    <a href="#">
+                    <a target="_blank" href="{{ route('services.show', $service->id) }}">
+
                         <p class="side-menu-p-font2">
                             <i class="fa fa-angle-right text-success"></i>
                             {{ $service->title_en }}

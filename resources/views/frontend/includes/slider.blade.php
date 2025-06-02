@@ -40,6 +40,6 @@
 
     </div><!-- /.hero-content -->
 
-    <a class="arrow scroll-target" href="#services-section"></a>
+    <a class="arrow scroll-target" href="#about"></a>
     <!-- change href value to ID of section you want to scroll down -->
 </div>
