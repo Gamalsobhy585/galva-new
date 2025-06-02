@@ -51,9 +51,8 @@
     @else
         <!-- Empty State (unchanged) -->
         <div class="flex flex-col items-center justify-center py-12 text-center">
-            <x-heroicon-o-information-circle class="mx-auto h-12 w-12 text-gray-400" />
+            <x-heroicon-o-information-circle class="mx-auto  w-10 text-gray-400" />
             <h3 class="mt-2 text-lg font-medium text-gray-900">No statistics yet</h3>
-            <p class="mt-1 text-gray-500">Click the button below to add company statistics.</p>
             <x-filament::button
                 :href="route('filament.admin.resources.infos.create')"
                 class="mt-4"
