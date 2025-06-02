@@ -175,11 +175,16 @@
 
 
             <div class="dropdown-container">
-                <a href="#"><p class="side-menu-p-font2"><i class="fa fa-angle-right text-success"></i> Hot-Dip
-                        Galvanizing</p></a>
-                <a href="#"><p class="side-menu-p-font2"><i class="fa fa-angle-right text-success"></i> Technical
-                        Support</p></a>
+                @foreach ($services as $service)
+                    <a href="#">
+                        <p class="side-menu-p-font2">
+                            <i class="fa fa-angle-right text-success"></i>
+                            {{ $service->title_en }}
+                        </p>
+                    </a>
+                @endforeach
             </div>
+
 
 
             <a><p class="side-menu-p-font">News</p></a>

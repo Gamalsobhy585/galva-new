@@ -45,8 +45,10 @@
 
                 <div class="col-md-6">
                     <div class="">
-                        <h3 class="line-height-normal margin-bottom-10">WHO WE ARE</h3>
-                        <div class="wprt-lines style-1 custom-3">
+                        <h3 class="line-height-normal margin-bottom-10">
+                            {{ $about->title_en ?? 'Default Title' }}
+                        </h3>         
+                <div class="wprt-lines style-1 custom-3">
                             <div class="line-1"></div>
                             <div class="line-2"></div>
                         </div>
@@ -55,12 +57,7 @@
                              style="height:25px"></div>
 
                         <p class="custom-font-p margin-bottom-20 custom-p-tag">
-                            EEC Galva stands at the forefront of contemporary private facilities in Egypt, providing
-                            unrivaled Hot-Dip Galvanization services for a wide array of fabricated steel and
-                            accessories. <strong>Founded in September 2008</strong>, we have evolved into a premier
-                            choice, catering to
-                            over 1200 customers including prestigious names in the local market involved in pivotal
-                            national and strategic projects.
+                            {!! $about->description_en ?? 'Default description goes here...' !!}
                         </p>
 
 
@@ -114,8 +111,11 @@
 
                     <div class="col-md-2">
                         <div class="wprt-counter text-center white-type has-plus">
-                            <div class="number" data-speed="5000" data-to="69"
-                                 data-in-viewport="yes">69
+                            <div class="number"
+                                data-speed="5000"
+                                data-to="{{ $info->projects_count ?? 0 }}"
+                                data-in-viewport="yes">
+                                {{ number_format($info->projects_count ?? 0) }}
                             </div>
                             <div class="text">Projects</div>
                         </div>
@@ -127,8 +127,11 @@
 
                     <div class="col-md-2">
                         <div class="wprt-counter text-center white-type has-plus">
-                            <div class="number" data-speed="5000" data-to="2200"
-                                 data-in-viewport="yes">2,200
+                            <div class="number"
+                                data-speed="5000"
+                                data-to="{{ $info->customers_count ?? 0 }}"
+                                data-in-viewport="yes">
+                                {{ number_format($info->customers_count ?? 0) }}
                             </div>
                             <div class="text">Customers</div>
                         </div>
@@ -137,14 +140,16 @@
                     </div><!-- /.col-md-2 -->
 
 
-                    <div class="col-md-2">
-                        <div class="wprt-counter text-center white-type has-plus">
-                            <div class="number" data-speed="5000" data-to="10000"
-                                 data-in-viewport="yes">10,000
-                            </div>
-                            <div class="text">Ton / Month</div>
-                        </div>
-                    </div><!-- /.col-md-2 -->
+                  <div class="col-md-2">
+                <div class="wprt-counter text-center white-type has-plus">
+                    <div class="number"
+                        data-speed="5000"
+                        data-to="{{ $info->tons_per_month ?? 0 }}"
+                        data-in-viewport="yes">
+                        {{ number_format($info->tons_per_month ?? 0) }}
+                    </div>
+                    <div class="text">Ton / Month</div>
+                </div><!-- /.col-md-2 -->
 
 
                 </div><!-- /.col-md-8 -->
