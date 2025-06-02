@@ -44,12 +44,7 @@ public function panel(Panel $panel): Panel
                 ->icon('heroicon-o-user-circle'),
             'logout' => UserMenuItem::make()->label('Sign Out'),
         ])
-         ->navigationItems([
-                NavigationItem::make('Sign Out')
-                    ->url('/admin/logout')
-                    ->icon('heroicon-o-arrow-right-on-rectangle')
-                    ->sort(999)
-            ])
+         
         ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
         ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
         ->pages([
