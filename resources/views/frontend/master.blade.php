@@ -1,21 +1,16 @@
 <!DOCTYPE html>
-<!--[if IE 8 ]>
-<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"><!--<![endif]-->
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 <head>
-    <!-- Basic Page Needs -->
     <meta charset="utf-8">
-    <!--[if IE]>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
 
     <title>EEC Galva - @yield('website_title')</title>
 
-    <meta name="description" content="EEC Galval Contnet">
-    <meta name="keywords" content=" galvanizing, steel galvanizing, galvanize steel, hot dip galvanizing">
-    <meta name="author" content="eecegypt.com">
 
-    <!-- Mobile Specific Metas -->
+    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
+            <link rel="stylesheet" href="{{ asset('css/header-search.css') }}">
+
+
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
@@ -84,19 +79,11 @@
 </html>
 
 
-<!-- side menu -->
 <div id="my-side-menu" class="side-menu">
 
 
     <div class="custom-side-menu">
-        {{--        <ul class="nav nav-pills nav-sidebar flex-column">--}}
-        {{--            <li class="nav-item">--}}
-        {{--                <a href="#" class="nav-link">--}}
-        {{--                    <p>test <i class="right fas fa-angle-left"></i></p>--}}
-        {{--                </a>--}}
 
-        {{--            </li>--}}
-        {{--        </ul>--}}
 
         <div class="col-md-12">
 
@@ -114,13 +101,11 @@
 
 
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
-                    {{--                    <span class="fa fa-close font-size-17"></span>--}}
                     <img src="{{ asset('assets/website_images/x-icon.svg') }}" alt="" width="20">
                 </a>
 
 
                 <a class="header-search-icon right-menu-icon-div" href="#">
-                    {{--                        <span class="fa fa-search font-size-17"></span>--}}
                     <img src="{{ asset('assets/website_images/search-icon.svg') }}" alt="" width="20">
                 </a>
 
@@ -133,14 +118,7 @@
 
 
                         <div class="input-group">
-                            {{--                            <div class="hero-title">--}}
-                            {{--                                <h1 style="margin-left: 11px;">SEARCH</h1>--}}
-                            {{--                            </div>--}}
 
-
-                            {{--                            <div class="input-group-prepend" style="margin-top: 22px; margin-left: 12px;">--}}
-                            {{--                                <img src="{{ asset('assets/website_images/search-icon.svg') }}" alt="" width="20">--}}
-                            {{--                            </div>--}}
 
                             <div class="col-md-1"></div>
                             <div class="col-md-10">
@@ -152,21 +130,15 @@
                         </div>
 
 
-                        {{--                        <button type="submit" class="header-search-submit wprt-button rounded-30px"--}}
-                        {{--                                title="Search">--}}
-                        {{--                            SEARCH--}}
-                        {{--                        </button>--}}
+
                         <input type="hidden" name="post_type" value="post">
                     </form>
                 </div>
             </div>
-            {{--            <span class="custom-border"></span>--}}
         </div>
 
         <div class="col-md-12">
-            {{--    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>--}}
             <a><p class="side-menu-p-font">About Us </p></a>
-            {{--        <a href="#"><p class="side-menu-p-font dropdown-btn">Our Services <i class="fa fa-chevron-right"></i></p></a>--}}
 
 
             <button class="side-menu-p-font dropdown-btn">Our Services
@@ -197,39 +169,8 @@
 </div>
 
 
-{{--<div id="my-right-side-menu" class="right-side-menu">--}}
-
-
-{{--    <div class="col-md-6 right-menu-div6">--}}
-
-{{--        <div id="header-search">--}}
-{{--            <a class="header-search-icon right-menu-icon-div" href="#"><span--}}
-{{--                    class="fa fa-search font-size-17"></span></a>--}}
-
-{{--            <form role="search" method="get" class="header-search-form custom-search-form" action="#"--}}
-{{--                  style="display: none;">--}}
-{{--                <input type="text" value="" name="s" class="header-search-field" placeholder="Search...">--}}
-{{--                <button type="submit" class="header-search-submit wprt-button light rounded-30px" title="Search">--}}
-{{--                    Search--}}
-{{--                </button>--}}
-{{--                <input type="hidden" name="post_type" value="post">--}}
-{{--            </form>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-
-
-{{--    <div class="col-md-6 right-menu-div6">--}}
-{{--        <a href="javascript:void(0)" class="closebtn right-menu-icon-div" onclick="closeNav()">--}}
-{{--            <span class="fa fa-close font-size-17"></span>--}}
-{{--        </a>--}}
-{{--    </div>--}}
-
-
-{{--</div>--}}
-
 
 <script>
-    /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
     var dropdown = document.getElementsByClassName("dropdown-btn");
     var i;
 
