@@ -4,22 +4,7 @@
     {{ trans('homepage.homepage') }}
 @endsection
 
-@section('website_styles')
-    <style>
-        .cbp-item-wrapper {
-            width: 100% !important;
-        }
 
-        .cbp-item {
-            width: 298px !important;
-        }
-
-        .font-class {
-            font-family: "DM Serif Display", serif !important;
-        }
-
-    </style>
-@endsection
 
 @section('website_scripts')
 
@@ -40,7 +25,7 @@
 
 
                 <div class="col-md-6">
-                    <img src="{{ asset('assets/website_images/home_galva.png') }}" alt="image" style="height: 413px;">
+                    <img src="{{ asset('assets/website_images/home_galva.webp') }}" alt="image" style="height: 413px;">
                 </div><!-- /.col-md-6 -->
 
                 <div class="col-md-6">

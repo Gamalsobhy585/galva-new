@@ -3,7 +3,7 @@
         <div class="widget widget_text">
             <h2 class="widget-title"><span class="">ABOUT US</span></h2>
             <div class="textwidget">
-                <img src="{{ asset('assets/website_images/logo-galva.png') }}" width="180" height="30" alt="image"
+                <img src="{{ asset('assets/website_images/logo-galva.webp') }}" width="180" height="30" alt="image"
                      class="margin-top-5 margin-bottom-25"/>
                 <p>
 

@@ -31,3 +31,17 @@
     width: 45rem;
     position: relative;
 }
+
+
+  .cbp-item-wrapper {
+            width: 100% !important;
+        }
+
+        .cbp-item {
+            width: 298px !important;
+        }
+
+        .font-class {
+            font-family: "DM Serif Display", serif !important;
+        }
+        

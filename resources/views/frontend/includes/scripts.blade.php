@@ -3,12 +3,12 @@
 <script type="text/javascript" src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/js/animsition.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/js/plugins.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/js/countTo.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/js/fitText.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/countTo.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/fitText.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/js/flexslider.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/js/vegas.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/js/cube.portfolio.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/js/main.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/cube.portfolio.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/main.min.js') }}"></script>
 
 
 <script>
@@ -19,7 +19,6 @@
         document.getElementById("my-right-side-menu").style.width = "180px";
         document.getElementById("main").style.marginLeft = "405px";
 
-        // document.getElementById("site-header-wrap").style.opacity = "0 !important";
     }
 
     function closeNav() {

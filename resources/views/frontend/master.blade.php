@@ -8,7 +8,8 @@
 
 
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
-            <link rel="stylesheet" href="{{ asset('css/header-search.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('css/header-search.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('css/header-search.min.css') }}">
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -18,8 +19,6 @@
 
     @include('frontend.includes.header')
 </head>
-
-
 <body class="front-page no-sidebar site-layout-full-width header-style-5 menu-has-search menu-has-cart header-sticky">
 
 
@@ -90,7 +89,7 @@
 
             <div class="col-md-6">
                 <a href="{{ route('homepageIndex') }}" class="menu-img">
-                    <img src="{{ asset('assets/website_images/galva.png') }}" alt="" width="115"
+                    <img src="{{ asset('assets/website_images/galva.webp') }}" alt="" width="115"
                          style="margin-left: -12px;">
 
                 </a>
@@ -104,11 +103,6 @@
                     <img src="{{ asset('assets/website_images/x-icon.svg') }}" alt="" width="20">
                 </a>
 
-
-
-
-
-              
             </div>
         </div>
 

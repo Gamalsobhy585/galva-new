@@ -4,28 +4,7 @@
     {{ trans('homepage.service') }}
 @endsection
 
-@section('website_styles')
-    <style>
-        .cbp-item-wrapper {
-            width: 100% !important;
-        }
 
-        .cbp-item {
-            width: 298px !important;
-        }
-
-        .font-class {
-            font-family: "DM Serif Display", serif !important;
-        }
-        .mb-5 {
-            margin-bottom: 5rem !important;
-        }
-        .mt-5 {
-            margin-top: 5rem !important;
-        }
-
-    </style>
-@endsection
 
 @section('website_scripts')
 

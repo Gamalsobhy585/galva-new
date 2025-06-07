@@ -1,4 +1,3 @@
-{{-- resources/views/partials/header.blade.php --}}
 
 <!-- Header -->
 <header id="site-header" class="header-front-page style-5">
@@ -18,9 +17,9 @@
             <div id="site-logo" class="clearfix">
                 <div id="site-logo-inner">
                     <a href="{{ route('homepageIndex') }}" title="steel galvanizing" rel="home" class="main-logo">
-                        <img src="{{ asset('assets/website_images/logo-galva-2.png') }}" width="130" height="10"
+                        <img src="{{ asset('assets/website_images/logo-galva-2.webp') }}" width="130" height="10"
                              alt="steel galvanizing"
-                             data-retina="{{ asset('assets/website_images/logo-galva-2.png') }}">
+                             data-retina="{{ asset('assets/website_images/logo-galva-2.webp') }}">
                     </a>
                 </div>
             </div>

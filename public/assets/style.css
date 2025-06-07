@@ -1,60 +1,25 @@
-/**
- * Theme Name: Construction - Construction Company, Building Company Template
- * Version: 1.3
- * Description: HTML5 Template for Construction Company and Building Company
- * Author: BlogWP
- * Author URI: https://themeforest.net/user/blogwp
- */
 
-/*@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i|Montserrat:300,400,500,600,700|Droid+Serif&subset=latin");*/
 
-/***** font-1 [Red Hat] */
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
 
-/***** font-2 [DM Serif Display] */
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
 
+
 @import "css/bootstrap.min.css";
-@import "css/animsition.css";
-@import "css/animate.css";
-@import "css/fontello.css";
+@import "css/animate.min.css";
+@import "css/fontello.min.css";
 @import "css/font-awesome.min.css";
-@import "css/owl.carousel.css";
+@import "css/owl.carousel.min.css";
 @import "css/cubeportfolio.min.css";
-@import "css/magnific-popup.css";
-@import "css/flexslider.css";
-@import "css/vegas.css";
-@import "includes/rev-slider/css/settings.css";
-@import "includes/rev-slider/css/layers.css";
-@import "includes/rev-slider/css/navigation.css";
-@import "css/woocommerce.css";
-@import "css/shortcodes.css";
+@import "css/magnific-popup.min.css";
+@import "css/flexslider.min.css";
+@import "includes/rev-slider/css/settings.min.css";
+@import "includes/rev-slider/css/layers.min.css";
+@import "includes/rev-slider/css/navigation.min.css";
+@import "css/woocommerce.min.css";
+@import "css/shortcodes.min.css";
 
-/**
- * Reset Browsers
- * General
- * Elements
- * Form
- * Typography
- * Extra classes
- * Layout
- * Grid
- * Hero Background SlideShow
- * Top Bar
- * Header
- * Featured Title
- * Blog
- * Blog Single
- * Widgets
- * Bottom Bar
- * Pagination & Arrows
- * Scroll Top Button
- * Media Queries
- * Retina Devices
- */
 
-/* Reset Browsers
--------------------------------------------------------------- */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
     margin: 0;
     padding: 0;
@@ -63,9 +28,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
-    /*font-family: inherit;*/
     font-family: "Red Hat Display", sans-serif;
-    /*font-family: "DM Serif Display", serif;*/
     font-size: 100%;
     font-style: inherit;
     font-weight: inherit;
@@ -202,8 +165,7 @@ blockquote .small {
     display: inline-block;
 }
 
-blockquote cite {
-}
+
 
 blockquote em,
 blockquote i {
@@ -463,7 +425,7 @@ input[type="reset"],
 input[type="submit"] {
     line-height: 1;
     cursor: pointer;
-    -webkit-appearance: button;
+    --webkit-appearance: button;
     border: 0;
 }
 
@@ -473,7 +435,7 @@ input[type="radio"] {
 }
 
 input[type="search"] {
-    -webkit-appearance: textfield; /* Addresses appearance set to searchfield in S5, Chrome */
+    --webkit-appearance: textfield; /* Addresses appearance set to searchfield in S5, Chrome */
 }
 
 input[type="search"]::-webkit-search-decoration { /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
@@ -529,7 +491,7 @@ input[type="color"] {
     margin-bottom: 30px;
     border-radius: 0;
     height: auto;
-    -webkit-appearance: none;
+    --webkit-appearance: none;
     text-shadow: none;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
@@ -583,7 +545,7 @@ input[type="submit"] {
     color: #fff;
     padding: 1.285em 2.642em;
     display: inline-block;
-    -webkit-appearance: none;
+    --webkit-appearance: none;
     -webkit-transition: all ease .238s;
     -moz-transition: all ease .238s;
     transition: all ease .238s;
@@ -1145,7 +1107,7 @@ p.dropcap span.first-letter {
 
 /* Clearfix */
 .clearfix {
-    *zoom: 1;
+    zoom: 1;
 }
 
 .clearfix:before,
@@ -3930,10 +3892,6 @@ body.page #main-content {
 }
 
 
-.side-menu:active {
-
-}
-
 
 .right-side-menu {
     /*height: 30%;*/
@@ -3959,10 +3917,8 @@ body.page #main-content {
 }
 
 .right-menu-icon-div {
-    /*text-align: center;*/
     align-items: center;
     display: block;
-    /* font-size: 14px; */
     color: black;
 }
 
@@ -4421,3 +4377,23 @@ body.page #main-content {
         background-size: 97px 15px;
     }
 }
+
+
+
+  .custom-p-tag {
+        font-size: 1.2em !important;
+        line-height: 28px !important;
+        font-weight: 400 !important;
+    }
+    
+   .cbp-item-wrapper {
+            width: 100% !important;
+        }
+
+        .cbp-item {
+            width: 298px !important;
+        }
+
+        .font-class {
+            font-family: "DM Serif Display", serif !important;
+        }

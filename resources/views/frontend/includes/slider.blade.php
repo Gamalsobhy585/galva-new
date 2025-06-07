@@ -2,22 +2,18 @@
 <div id="hero-section" data-number="1" data-effect="fade">
 
 
-    <video autoplay muted loop id="myVideo" style="width: 100%">
-        <source src="{{ asset('assets/website_images/galva_website2.mp4') }}" type="video/mp4">
+    <video autoplay muted loop id="myVideo" preload="metadata" loading="lazy" style="width: 100%">
+  <source src="{{ asset('assets/website_images/galva_website2.webm') }}" type="video/webm">
     </video>
 
     <div class="hero-content">
         <div class="col-md-10">
             <div class="hero-title" data-min="" data-max="">
                 <h1>TAKING QUALITY SERIOUSLY.</h1>
-                {{--            <h1>QUALITY</h1>--}}
-                {{--            <h1>SERIOUSLY</h1>--}}
-                {{--                <h1>Exceptional Galvanizing, Exceptional Service.</h1>--}}
+
             </div>
 
-            {{--            <div class="hero-title" data-min="" data-max="">--}}
-            {{--                <h3>EEC Galva's commitment to excellence ensures your projects stand the test of time</h3>--}}
-            {{--            </div>--}}
+        
 
             <div class="hero-text">
                 <p class="">
