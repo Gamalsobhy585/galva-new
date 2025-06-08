@@ -25,6 +25,7 @@ return [
     ],
     "info_section" => [
         "title" => "ثوّر مشاريعك",
+        "desc" => "أرقام وحقائق",
         "projects" => "المشاريع",
         "customers" => "العملاء",
         "productivity" => "طن / شهر",

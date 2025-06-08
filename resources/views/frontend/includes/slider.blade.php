@@ -1,4 +1,3 @@
-<!-- Hero Background SlideShow -->
 <div id="hero-section" data-number="1" data-effect="fade">
 
 
@@ -9,7 +8,7 @@
     <div class="hero-content">
         <div class="col-md-10">
             <div class="hero-title" data-min="" data-max="">
-                <h1>TAKING QUALITY SERIOUSLY.</h1>
+                <h1>{{__('messages.hero_section.title') }}</h1>
 
             </div>
 
@@ -17,11 +16,7 @@
 
             <div class="hero-text">
                 <p class="">
-                    At EEC Galva, quality is taken seriously at all levels. EEC Galva has a rigorous quality control
-                    program
-                    at all steps in the process. From the chemical and zinc compositions to the timing and techniques
-                    used
-                    to pre-treat and galvanize the product to the finishing works carried out on the product.
+                   {{ __('messages.hero_section.description')}}
                 </p>
             </div>
         </div>
@@ -29,13 +24,13 @@
 
         <div class="col-md-12">
             <div class="hero-button">
-                <a class="wprt-button outline very-light rounded-30px margin-top-30" href="#">Get in
-                    Touch</a>
+                <a class="wprt-button outline very-light rounded-30px margin-top-30" href="#">
+                   {{ __('messages.hero_section.get_in_touch')}}
+                </a>
             </div>
         </div>
 
-    </div><!-- /.hero-content -->
+    </div>
 
     <a class="arrow scroll-target" href="#about"></a>
-    <!-- change href value to ID of section you want to scroll down -->
 </div>

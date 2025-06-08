@@ -1,9 +1,9 @@
 <div class="row">
     <div class="col-md-4">
         <div class="widget widget_text">
-            <h2 class="widget-title"><span class="">ABOUT US</span></h2>
+            <h2 class="widget-title"><span class="">{{ __('messages.footer.about_us')}}</span></h2>
             <div class="textwidget">
-                <img src="{{ asset('assets/website_images/logo-galva.webp') }}" width="180" height="30" alt="image"
+                <img loading="lazy" src="{{ asset('assets/website_images/logo-galva.webp') }}" width="180" height="30" alt="image"
                      class="margin-top-5 margin-bottom-25"/>
                 <p>
 
@@ -15,9 +15,9 @@
 
     <div class="col-md-4">
         <div class="widget widget_links">
-            <h2 class="widget-title"><span class="">COMPANY LINKS</span></h2>
+            <h2 class="widget-title"><span class="">{{ __('messages.footer.links')}}</span></h2>
             <ul class="wprt-links clearfix col4">
-                <li class="style-2"><a href="#about">About Us</a></li>
+                <li class="style-2"><a href="#about">{{ __('messages.footer.about_us')}}</a></li>
 
                 @foreach ($services as $service)
                     <li class="style-2">
@@ -27,7 +27,7 @@
                     </li>
                 @endforeach
 
-                <li class="style-2"><a href="/careers">Careers</a></li>
+                <li class="style-2"><a href="/careers">{{ __('messages.footer.careers')}}</a></li>
             </ul>
 
         </div>
@@ -36,19 +36,19 @@
 
     <div class="col-md-4">
         <div class="widget widget_information">
-            <h2 class="widget-title"><span class="">CONTACT INFO</span></h2>
+            <h2 class="widget-title"><span class="">{{ __('messages.footer.contact')}}</span></h2>
             <ul class="style-2">
                 <li class="address clearfix">
-                    <span class="hl">Address:</span>
+                    <span class="hl">{{ __('messages.footer.address')}}:</span>
                     <span
-                        class="text">Second Industrial Zone - Block No. 27013 - Obour City, Cairo, Egypt</span>
+                        class="text">{{ __('messages.footer.factory_address')}}</span>
                 </li>
                 <li class="phone clearfix">
-                    <span class="hl">Phone:</span>
+                    <span class="hl">{{ __('messages.footer.phone')}}:</span>
                     <span class="text">+02 43130285</span>
                 </li>
                 <li class="email clearfix">
-                    <span class="hl">E-mail:</span>
+                    <span class="hl">{{ __('messages.footer.email')}}:</span>
                     <span class="text">info@eecgalva.com</span>
                 </li>
             </ul>

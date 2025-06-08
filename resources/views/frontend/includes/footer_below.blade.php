@@ -1,7 +1,7 @@
 <div class="bottom-bar-inner-wrap">
 
     <div class="bottom-bar-content">
-        <div id="copyright">EEC GALVA © 2024 Copyrights .
+        <div id="copyright">{{__('messages.footer.copyright')}}
     </div><!-- /.bottom-bar-content -->
 
     <div class="bottom-bar-menu">
@@ -9,4 +9,5 @@
 
         </ul>
     </div><!-- /.bottom-bar-menu -->
+</div>
 </div>

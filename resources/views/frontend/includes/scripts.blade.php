@@ -6,9 +6,9 @@
 <script type="text/javascript" src="{{ asset('assets/js/countTo.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/js/fitText.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/js/flexslider.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/js/vegas.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/js/cube.portfolio.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/js/main.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/serviceDropDown.min.js') }}"></script>
 
 
 <script>

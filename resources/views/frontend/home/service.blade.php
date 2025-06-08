@@ -16,7 +16,7 @@
             <div class="row mb-5 mt-5">
                 <div class="wprt-spacer" data-desktop="80" data-mobi="60" data-smobi="60" style="height:80px"></div>
                 <div class="col-md-6">
-                    <img src="{{ asset('storage/services/' . $service->image) }}" alt="image" style="height: 413px;">
+                    <img loading="lazy" src="{{ asset('storage/services/' . $service->image) }}" alt="image" style="height: 413px;">
                 </div>
                 <div class="col-md-6">
                     <div class="">

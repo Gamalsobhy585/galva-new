@@ -25,7 +25,7 @@
 
 
                 <div class="col-md-6">
-                    <img src="{{ asset('assets/website_images/home_galva.webp') }}" alt="image" style="height: 413px;">
+                    <img loading="lazy" src="{{ asset('assets/website_images/home_galva.webp') }}" alt="image" style="height: 413px;">
                 </div><!-- /.col-md-6 -->
 
                 <div class="col-md-6">
@@ -48,7 +48,7 @@
 
                         <u>
                             <a class="wprt-button light small rounded-30px custom-p-tag" target="_blank"
-                               href="#">More About Us
+                               href="#">{{ __('messages.about_section.more_about')}}
                             </a>
                         </u>
                     </div>
@@ -74,7 +74,7 @@
                          data-smobi="60"></div>
 
                     <h5 class="text-left text-center-mobile text-white font-size-70 line-height-normal letter-spacing-1px">
-                        <strong class="font-class">Revolutionize Your Projects</strong>
+                        <strong class="font-class">{{ __('messages.info_section.title')}}</strong>
                     </h5>
 
                 </div><!-- /.col-md-4 -->
@@ -86,7 +86,7 @@
                     {{--                    <h2 class="text-right text-center-mobile text-white font-family-extend font-size-25 margin-bottom-0 line-height-normal letter-spacing-1px">--}}
                     {{--                        The Construction Company</h2>--}}
                     <h6 class="text-right text-center-mobile text-white font-size-50 line-height-normal margin-bottom-20 letter-spacing-1px">
-                        <strong class="font-class">Facts And Figures</strong>
+                        <strong class="font-class">{{ __('messages.info_section.desc')}}</strong>
                     </h6>
 
 
@@ -102,7 +102,7 @@
                                 data-in-viewport="yes">
                                 {{ number_format($info->projects_count ?? 0) }}
                             </div>
-                            <div class="text">Projects</div>
+                            <div class="text">{{ __('messages.info_section.projects')}}</div>
                         </div>
 
                         <div class="wprt-spacer" data-desktop="0" data-mobi="25"
@@ -118,7 +118,7 @@
                                 data-in-viewport="yes">
                                 {{ number_format($info->customers_count ?? 0) }}
                             </div>
-                            <div class="text">Customers</div>
+                            <div class="text">{{ __('messages.info_section.customers')}}</div>
                         </div>
                         <div class="wprt-spacer" data-desktop="0" data-mobi="25"
                              data-smobi="25"></div>
@@ -133,7 +133,7 @@
                         data-in-viewport="yes">
                         {{ number_format($info->tons_per_month ?? 0) }}
                     </div>
-                    <div class="text">Ton / Month</div>
+                    <div class="text">{{ __('messages.info_section.productivity')}}</div>
                 </div><!-- /.col-md-2 -->
 
 
@@ -157,7 +157,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="wprt-spacer" data-desktop="70" data-mobi="60" data-smobi="60"></div>
-                    <h2 class="text-center margin-bottom-10">Our Clients</h2>
+                    <h2 class="text-center margin-bottom-10">{{ __('messages.client_section.title')}}</h2>
                     <div class="wprt-lines style-2 custom-1">
                         <div class="line-1"></div>
                     </div>
@@ -175,7 +175,7 @@
                                         <div class="inner">
                                             <div class="image">
                                                 <div class="inner">
-                                                    <img src="{{ asset('storage/clients/' . $client->logo) }}" alt="{{ $client->name_en }}" class="customer-img"/>
+                                                    <img loading="lazy" src="{{ asset('storage/clients/' . $client->logo) }}" alt="{{ $client->name_en }}" class="customer-img"/>
                                                 </div>
                                             </div>
                                         </div>

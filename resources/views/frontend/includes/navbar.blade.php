@@ -7,7 +7,7 @@
             <nav id="main-nav" class="main-nav" style="left: 10px !important;">
                 <ul class="menu ">
                     <a href="#" class="openbtn" onclick="openNav()">
-                        <img src="{{ asset('assets/website_images/menu_icon.svg') }}" width="86" height="30"
+                        <img loading="lazy" src="{{ asset('assets/website_images/menu_icon.svg') }}" width="86" height="30"
                              alt="steel galvanizing" data-retina="{{ asset('assets/website_images/menu_icon.svg') }}">
                     </a>
                 </ul>
@@ -17,7 +17,7 @@
             <div id="site-logo" class="clearfix">
                 <div id="site-logo-inner">
                     <a href="{{ route('homepageIndex') }}" title="steel galvanizing" rel="home" class="main-logo">
-                        <img src="{{ asset('assets/website_images/logo-galva-2.webp') }}" width="130" height="10"
+                        <img loading="lazy" src="{{ asset('assets/website_images/logo-galva-2.webp') }}" width="130" height="10"
                              alt="steel galvanizing"
                              data-retina="{{ asset('assets/website_images/logo-galva-2.webp') }}">
                     </a>
@@ -30,16 +30,16 @@
                     <div class="menu  ">
                         <ul class="row" >
                             <li class="col-md-5">
-                                <a class="wprt-button outline small very-light rounded-30px margin-top-5" href="/contact">Contact Us</a>
+                                <a class="wprt-button outline small very-light rounded-30px margin-top-5" href="/contact">{{__('messages.navbar.contact')}}</a>
                             </li>
                             <li class="col-md-2  lang-button" >
                                 <a  class="text-white" href="#">EN</a>
                                 <ul class="sub-menu position-absolute text-white">
-                                <li class="text-white"><a href="#">AR</a></li>
+                                <li class="text-white"><a href="#">عربي</a></li>
                                 </ul>
                             </li>
                             <li class="col-md-5 search-bar ">
-                                    <input type="text" name="s" class="header-search-field" placeholder="Search..." />
+                                    <input type="text" name="s" class="header-search-field" placeholder="{{__('messages.navbar.search')}}" />
                                   
                                     <input type="hidden" name="post_type" value="post" />
                             </li>

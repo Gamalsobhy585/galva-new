@@ -89,7 +89,7 @@
 
             <div class="col-md-6">
                 <a href="{{ route('homepageIndex') }}" class="menu-img">
-                    <img src="{{ asset('assets/website_images/galva.webp') }}" alt="" width="115"
+                    <img loading="lazy" src="{{ asset('assets/website_images/galva.webp') }}" alt="" width="115"
                          style="margin-left: -12px;">
 
                 </a>
@@ -100,17 +100,17 @@
 
 
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
-                    <img src="{{ asset('assets/website_images/x-icon.svg') }}" alt="" width="20">
+                    <img loading="lazy" src="{{ asset('assets/website_images/x-icon.svg') }}" alt="" width="20">
                 </a>
 
             </div>
         </div>
 
         <div class="col-md-12">
-            <a><p class="side-menu-p-font">About Us </p></a>
+            <a><p class="side-menu-p-font">{{ __('messages.sidebar.about')}}</p></a>
 
 
-            <button class="side-menu-p-font dropdown-btn">Our Services
+            <button class="side-menu-p-font dropdown-btn"> {{ __('messages.sidebar.services')}}
                 <i class="fa fa-caret-down"></i>
             </button>
 
@@ -129,30 +129,14 @@
 
 
 
-            <a><p class="side-menu-p-font">News</p></a>
-            <a><p class="side-menu-p-font">Careers</p></a>
-            <a><p class="side-menu-p-font">Our Management</p></a>
-            <a><p class="side-menu-p-font">Our Responsibility</p></a>
+            <a><p class="side-menu-p-font">{{ __('messages.sidebar.news')}}</p></a>
+            <a><p class="side-menu-p-font"> {{ __('messages.sidebar.careers')}}</p></a>
+            <a><p class="side-menu-p-font"> {{ __('messages.sidebar.management')}}</p></a>
+            <a><p class="side-menu-p-font"> {{ __('messages.sidebar.responsibility')}}</p></a>
         </div>
     </div>
 </div>
 
 
 
-<script>
-    var dropdown = document.getElementsByClassName("dropdown-btn");
-    var i;
 
-    for (i = 0; i < dropdown.length; i++) {
-        dropdown[i].addEventListener("click", function () {
-            this.classList.toggle("active");
-            var dropdownContent = this.nextElementSibling;
-            if (dropdownContent.style.display === "block") {
-                dropdownContent.style.display = "none";
-            } else {
-                dropdownContent.style.display = "block";
-            }
-        });
-    }
-
-</script>

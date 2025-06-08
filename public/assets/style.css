@@ -3556,7 +3556,6 @@ body.page #main-content {
     position: absolute;
     right: 0;
     bottom: 0;
-    background: url(assets/img/map-small.png) no-repeat center center;
 }
 
 /* Re-style Widgets for footer */

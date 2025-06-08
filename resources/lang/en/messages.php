@@ -28,6 +28,7 @@ return [
     ],
     "info_section"=>[
         "title"=>"Revolutionize Your Projects",
+        "desc"=>"Figures And Facts",
         "projects"=>"Projects",
         "customers"=>"Customers",
         "productivity"=>"Ton / Month"
