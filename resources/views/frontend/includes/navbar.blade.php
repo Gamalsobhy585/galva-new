@@ -27,16 +27,21 @@
             <div class="mobile-button"><span></span></div>
 
                <nav id="main-nav" class="main-nav">
+
                     <div class="menu  ">
                         <ul class="row" >
                             <li class="col-md-5">
                                 <a class="wprt-button outline small very-light rounded-30px margin-top-5" href="/contact">{{__('messages.navbar.contact')}}</a>
                             </li>
                             <li class="col-md-2  lang-button" >
-                                <a  class="text-white" href="#">EN</a>
-                                <ul class="sub-menu position-absolute text-white">
-                                <li class="text-white"><a href="#">عربي</a></li>
-                                </ul>
+                            <a class="text-white" href="#">{{ app()->getLocale() == 'ar' ? 'عربي' : 'EN' }}</a>
+                            <ul class="sub-menu position-absolute text-white">
+                                @if(app()->getLocale() == 'ar')
+                                    <li class="text-white"><a href="#">EN</a></li>
+                                @else
+                                    <li class="text-white"><a href="#">عربي</a></li>
+                                @endif
+                            </ul>
                             </li>
                             <li class="col-md-5 search-bar ">
                                     <input type="text" name="s" class="header-search-field" placeholder="{{__('messages.navbar.search')}}" />
@@ -52,7 +57,7 @@
     
               
 
-        </div>
+            </div>
     </div>
 </header>
 
