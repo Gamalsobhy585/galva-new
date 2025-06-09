@@ -46,7 +46,7 @@ return [
         "factory_address"=>"Second Industrial Zone - Block No. 27013 - Obour City, Cairo, Egypt",
         "phone"=>"Phone",
         "email"=>"E-mail",
-        "copy_right"=>"EEC GALVA © 2024 Copyrights ."
+        "copy_right"=>"EEC GALVA © 2025 Copyrights ."
         
     ]
 

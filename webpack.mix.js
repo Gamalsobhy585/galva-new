@@ -19,6 +19,7 @@ mix.js('resources/js/app.js', 'public/js')
    mix.styles([
     'public/assets/css/animate.min.css',
     'public/assets/css/bootstrap.min.css',
+    'public/assets/bootstrap.min.css',
     'public/assets/css/contact.min.css',
     'public/assets/css/cubeportfolio.min.css',
     'public/assets/css/flexslider.min.css',

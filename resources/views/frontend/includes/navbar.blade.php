@@ -1,64 +1,56 @@
-
-<!-- Header -->
-<header id="site-header" class="header-front-page style-5">
-    <div id="site-header-inner" class="container">
-        <div class="wrap-inner d-flex justify-content-between align-items-center">
-
-            <nav id="main-nav" class="main-nav" style="left: 10px !important;">
-                <ul class="menu ">
-                    <a href="#" class="openbtn" onclick="openNav()">
-                        <img loading="lazy" src="{{ asset('assets/website_images/menu_icon.svg') }}" width="86" height="30"
-                             alt="steel galvanizing" data-retina="{{ asset('assets/website_images/menu_icon.svg') }}">
-                    </a>
-                </ul>
-            </nav>
-
+<header>
+    <div id="navbar" class="navbar-container w-100 position-fixed bg-black opacity-10 transition-opacity" style="z-index: 1000;">  
+        <div class="d-flex container py-3 align-items-center justify-content-between">
             
-            <div id="site-logo" class="clearfix">
-                <div id="site-logo-inner">
-                    <a href="{{ route('homepageIndex') }}" title="steel galvanizing" rel="home" class="main-logo">
-                        <img loading="lazy" src="{{ asset('assets/website_images/logo-galva-2.webp') }}" width="130" height="10"
-                             alt="steel galvanizing"
-                             data-retina="{{ asset('assets/website_images/logo-galva-2.webp') }}">
-                    </a>
-                </div>
+            <!-- Menu Part -->
+            <div class="nav-part-one d-flex align-items-center justify-content-start">
+                <ul class="menu list-unstyled m-0">
+                    <li>
+                        <a href="#" class="openbtn text-decoration-none" onclick="openNav()">
+                            <img loading="lazy" src="{{ asset('assets/website_images/menu_icon.svg') }}" width="86" height="30"
+                               class="img-fluid" alt="steel galvanizing" data-retina="{{ asset('assets/website_images/menu_icon.svg') }}">
+                        </a>
+                    </li>
+                </ul>
             </div>
 
-            <div class="mobile-button"><span></span></div>
+            <!-- Logo Part -->
+            <div class="nav-part-two d-flex align-items-center justify-content-center">
+                <a href="{{ route('homepageIndex') }}" title="steel galvanizing" rel="home" class="main-logo text-decoration-none">
+                    <img loading="lazy" src="{{ asset('assets/website_images/logo-galva-2.webp') }}" width="130" height="10"
+                    class="img-fluid" alt="steel galvanizing"
+                         data-retina="{{ asset('assets/website_images/logo-galva-2.webp') }}">
+                </a>
+            </div>
 
-               <nav id="main-nav" class="main-nav">
-
-                    <div class="menu  ">
-                        <ul class="row" >
-                            <li class="col-md-5">
-                                <a class="wprt-button outline small very-light rounded-30px margin-top-5" href="/contact">{{__('messages.navbar.contact')}}</a>
-                            </li>
-                            <li class="col-md-2  lang-button" >
-                            <a class="text-white" href="#">{{ app()->getLocale() == 'ar' ? 'عربي' : 'EN' }}</a>
-                            <ul class="sub-menu position-absolute text-white">
+            <!-- Contact, Language, Search Part -->
+            <div class="nav-part-three d-flex align-items-center justify-content-end">
+                <div class="row g-2 align-items-center">
+                    <!-- Contact Button -->
+                    <div class="col-auto">
+                        <a class="btn btn-outline-light btn-sm rounded-pill px-3" href="/contact">{{__('messages.navbar.contact')}}</a>
+                    </div>
+                    
+                    <!-- Language Dropdown -->
+                    <div class="col-auto">
+                        <div class="dropdown">
+                            <a class="text-white text-decoration-none dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                {{ app()->getLocale() == 'ar' ? 'عربي' : 'EN' }}
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end bg-black border-0">
                                 @if(app()->getLocale() == 'ar')
-                                    <li class="text-white"><a href="#">EN</a></li>
+                                    <li><a class="dropdown-item text-white bg-transparent" href="#">EN</a></li>
                                 @else
-                                    <li class="text-white"><a href="#">عربي</a></li>
+                                    <li><a class="dropdown-item text-white bg-transparent" href="#">عربي</a></li>
                                 @endif
                             </ul>
-                            </li>
-                            <li class="col-md-5 search-bar ">
-                                    <input type="text" name="s" class="header-search-field" placeholder="{{__('messages.navbar.search')}}" />
-                                  
-                                    <input type="hidden" name="post_type" value="post" />
-                            </li>
-                        </ul>
-
-
+                        </div>
                     </div>
-                </nav>
-
-    
-              
-
+                    
+                    <!-- Search Bar -->
+                  
+                </div>
             </div>
+        </div>
     </div>
 </header>
-
-<span class="custom-border-bottom"></span>
