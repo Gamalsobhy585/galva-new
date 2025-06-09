@@ -1197,12 +1197,11 @@ p.dropcap span.first-letter {
 #hero-section .hero-content {
     position: relative;
     z-index: 20;
-    text-align: left;
     /*text-align: left;*/
 
-    margin-top: -525px !important;
-    margin-left: 10% !important;
-    float: left !important;
+    margin-top: -525px ;
+    margin-left: 10% ;
+    float: left ;
 }
 
 #hero-section .hero-title {

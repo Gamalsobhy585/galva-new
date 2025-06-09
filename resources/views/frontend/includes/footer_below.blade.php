@@ -1,7 +1,7 @@
 <div class="bottom-bar-inner-wrap">
 
     <div class="bottom-bar-content">
-        <div id="copyright">{{__('messages.footer.copy_right')}}
+        <div id="copyright" class="text-center">{{__('messages.footer.copy_right')}}
     </div><!-- /.bottom-bar-content -->
 
     <div class="bottom-bar-menu">

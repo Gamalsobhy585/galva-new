@@ -1,9 +1,11 @@
 <header>
     <div id="navbar" class="navbar-container w-100 position-fixed bg-black opacity-10 transition-opacity" style="z-index: 1000;">  
-        <div class="d-flex container py-3 align-items-center justify-content-between">
+        <div class="d-flex container py-3 align-items-center justify-content-between {{ app()->getLocale() == 'ar' ? 'flex-row-reverse' : '' }}"
+    dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}  ">
             
             <!-- Menu Part -->
-            <div class="nav-part-one d-flex align-items-center justify-content-start">
+            <div class="nav-part-one d-flex align-items-center  {{ app()->getLocale() == 'ar' ? 'justify-content-end flex-row-reverse' : 'justify-content-start' }}"
+    dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
                 <ul class="menu list-unstyled m-0">
                     <li>
                         <a href="#" class="openbtn text-decoration-none" onclick="openNav()">
@@ -24,7 +26,8 @@
             </div>
 
             <!-- Contact, Language, Search Part -->
-            <div class="nav-part-three d-flex align-items-center justify-content-end">
+            <div class="nav-part-three d-flex align-items-center  {{ app()->getLocale() == 'ar' ? 'justify-content-start flex-row-reverse' : 'justify-content-end' }}"
+    dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
                 <div class="row g-2 align-items-center">
                     <!-- Contact Button -->
                     <div class="col-auto">

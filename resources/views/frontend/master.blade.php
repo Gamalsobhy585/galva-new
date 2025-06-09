@@ -17,7 +17,10 @@
 
     @include('frontend.includes.header')
 </head>
-<body class="front-page no-sidebar site-layout-full-width header-style-5 menu-has-search menu-has-cart header-sticky">
+<body 
+    class="front-page no-sidebar site-layout-full-width header-style-5 menu-has-search menu-has-cart header-sticky ">
+    {{-- <body class="front-page no-sidebar site-layout-full-width header-style-5 menu-has-search menu-has-cart header-sticky"> --}}
+
 
 
 <div id="wrapper" class="animsition">
