@@ -7,9 +7,7 @@
     <title>EEC Galva - @yield('website_title')</title>
 
 
-    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
-    {{-- <link rel="stylesheet" href="{{ asset('css/header-search.css') }}"> --}}
-    <link rel="stylesheet" href="{{ asset('css/header-search.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/all-styles.css') }}">
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -27,7 +25,7 @@
 
         <div id="site-header-wrap">
             @include('frontend.includes.navbar')
-        </div><!-- /#site-header-wrap -->
+        </div>
 
 
     @yield('website_slider')
@@ -68,15 +66,6 @@
 </div><!-- /#wrapper -->
 
 <a id="scroll-top"></a>
-
-
-@yield('website_scripts')
-
-@include('frontend.includes.scripts')
-
-</body>
-</html>
-
 
 <div id="my-side-menu" class="side-menu">
 
@@ -137,6 +126,15 @@
     </div>
 </div>
 
+
+@yield('website_scripts')
+
+
+<script src="{{ asset('assets/js/app.min.js') }}"></script>
+
+
+</body>
+</html>
 
 
 

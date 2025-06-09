@@ -4,7 +4,6 @@
 
 
 
-<link rel="stylesheet" type="text/css" href="{{ asset('assets/style.css') }}">
 
 <link rel="shortcut icon" href="{{ asset('assets/website_images/icon_galva.webp') }}">
 <link rel="apple-touch-icon-precomposed" href="{{ asset('assets/website_images/icon_galva.webp') }}">

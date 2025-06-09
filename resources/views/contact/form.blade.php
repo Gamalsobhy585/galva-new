@@ -10,7 +10,7 @@
 @endsection
 
 @section('website_scripts')
-    <script src="{{ asset('js/contact-form.min.js') }}"></script>
+    <script src="{{ asset('assets/js/contact-form.min.js') }}"></script>
 @endsection
 
 @section('website_content')

@@ -7,7 +7,7 @@
 
 
 @section('website_scripts')
-
+<script type="text/javascript" src="{{ asset('assets/js/cube.portfolio.min.js') }}"></script>
 @endsection
 
 @section('website_slider')
