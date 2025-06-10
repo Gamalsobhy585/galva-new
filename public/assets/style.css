@@ -2907,6 +2907,21 @@ body.page #main-content {
     z-index: -1;
 }
 
+
+html[dir="rtl"]  .widget-title > span:after,
+html[dir="rtl"]  .widget-title > span:after,
+html[dir="rtl"]  .widget-title > span:after,
+html[dir="rtl"]  .widget-title > span:after {
+    left: 100% !important;
+}
+
+h2[dir="rtl"].ar-custom#contact-info > span::after {
+    left: 100% !important;
+}
+
+
+
+
 #sidebar.style-1 .widget .widget-title > span:after,
 #sidebar.style-2 .widget .widget-title > span:after,
 #footer-widgets.style-1 .widget .widget-title > span:after,

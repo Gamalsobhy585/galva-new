@@ -15,14 +15,15 @@
 
     <div class="col-md-4">
         <div class="widget widget_links">
-            <h2 class="widget-title"><span class="">{{ __('messages.footer.links')}}</span></h2>
+            <h2 class="widget-title "><span class="">{{ __('messages.footer.links')}}</span></h2>
             <ul class="wprt-links clearfix col4">
                 <li class="style-2"><a href="#about">{{ __('messages.footer.about_us')}}</a></li>
 
                 @foreach ($services as $service)
                     <li class="style-2">
                         <a target="_blank" href="{{ route('services.show', $service->id) }}">
-                            {{ $service->title_en }}
+                            {{-- {{ $service->title_en }} --}}
+                            {{ app()->getLocale() === 'ar' ? $service->title_ar : $service->title_en }}
                         </a>
                     </li>
                 @endforeach
@@ -35,21 +36,25 @@
 
 
     <div class="col-md-4">
-        <div class="widget widget_information">
-            <h2 class="widget-title"><span class="">{{ __('messages.footer.contact')}}</span></h2>
-            <ul class="style-2">
-                <li class="address clearfix">
-                    <span class="hl">{{ __('messages.footer.address')}}:</span>
+        <div class="widget  widget_information">
+                <h2 dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}"
+                   id="contact-info" class="widget-title ar-custom {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }}">
+                    <span>{{ __('messages.footer.contact') }}</span>
+                </h2>
+
+                <ul class="style-2">
+                <li class="address d-flex {{ app()->getLocale() === 'ar' ? 'flex-row-reverse' : '' }}">
+                    <span class="hl {{app()->getLocale() === 'ar' ? 'text-right' : 'text-left'}}">{{app()->getLocale() === 'ar' ? ':العنوان' : 'Address :'}}</span>
                     <span
-                        class="text">{{ __('messages.footer.factory_address')}}</span>
+                        class="text {{app()->getLocale() === 'ar' ? 'text-right' : 'text-left'}}">{{ __('messages.footer.factory_address')}}</span>
                 </li>
-                <li class="phone clearfix">
-                    <span class="hl">{{ __('messages.footer.phone')}}:</span>
-                    <span class="text">+02 43130285</span>
+                <li class="phone  d-flex {{ app()->getLocale() === 'ar' ? 'flex-row-reverse' : '' }}">
+                    <span class="hl {{app()->getLocale() === 'ar' ? 'text-right' : 'text-left'}}">{{app()->getLocale() === 'ar' ? ':الهاتف' : 'Phone :'}}</span>
+                    <span class="text {{app()->getLocale() === 'ar' ? 'text-right' : 'text-left'}}">+02 43130285</span>
                 </li>
-                <li class="email clearfix">
-                    <span class="hl">{{ __('messages.footer.email')}}:</span>
-                    <span class="text">info@eecgalva.com</span>
+                <li class="email  d-flex {{ app()->getLocale() === 'ar' ? 'flex-row-reverse' : '' }}">
+                    <span class="hl {{app()->getLocale() === 'ar' ? 'text-right' : 'text-left'}}">{{app()->getLocale() === 'ar' ? ':الايميل' : 'Email :'}}</span>
+                    <span class="text {{app()->getLocale() === 'ar' ? 'text-right' : 'text-left'}}">info@eecgalva.com</span>
                 </li>
             </ul>
         </div>

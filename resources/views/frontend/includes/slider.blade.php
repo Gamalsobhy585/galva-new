@@ -1,4 +1,4 @@
-<div id="hero-section" data-number="1" data-effect="fade">
+<div id="hero-section" class="overflow-hidden" data-number="1" data-effect="fade">
 
 
     <video autoplay muted loop id="myVideo" preload="metadata" loading="lazy" style="width: 100%">
