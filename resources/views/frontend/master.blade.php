@@ -6,6 +6,7 @@
 
     <title>EEC Galva - @yield('website_title')</title>
 
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ asset('css/all-styles.css') }}">
 
@@ -14,6 +15,7 @@
 
 
     @yield('website_styles')
+
 
     @include('frontend.includes.header')
 </head>
@@ -70,64 +72,53 @@
 
 <a id="scroll-top"></a>
 
-<div id="my-side-menu" class="side-menu">
 
 
-    <div class="custom-side-menu">
 
-
-        <div class="col-md-12">
-
-
-            <div class="col-md-6">
-                <a href="{{ route('homepageIndex') }}" class="menu-img">
-                    <img loading="lazy" src="{{ asset('assets/website_images/galva.webp') }}" alt="" width="115"
-                         style="margin-left: -12px;">
-
-                </a>
-            </div>
-
-
-            <div class="col-md-6 row" style="float: right;">
-
-
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
-                    <img loading="lazy" src="{{ asset('assets/website_images/x-icon.svg') }}" alt="" width="20">
-                </a>
-
-            </div>
-        </div>
-
-        <div class="col-md-12">
-            <a><p class="side-menu-p-font">{{ __('messages.sidebar.about')}}</p></a>
-
-
-            <button class="side-menu-p-font dropdown-btn"> {{ __('messages.sidebar.services')}}
-                <i class="fa fa-caret-down"></i>
-            </button>
-
-
-            <div class="dropdown-container">
-                @foreach ($services as $service)
-                    <a target="_blank" href="{{ route('services.show', $service->id) }}">
-
-                        <p class="side-menu-p-font2">
-                            <i class="fa fa-angle-right text-success"></i>
-                            {{ $service->title_en }}
-                        </p>
+ <div id="my-side-menu" class="side-menu">
+        <div class="custom-side-menu">
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <a href="{{ route('homepageIndex') }}" class="menu-img">
+                        <img loading="lazy" src="{{ asset('assets/website_images/galva.webp') }}" alt="" width="115" style="margin-left: -12px;">
                     </a>
-                @endforeach
+                </div>
+                <div class="col-md-6 row" style="float: right;">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+                        <img loading="lazy" src="{{ asset('assets/website_images/x-icon.svg') }}" alt="" width="20">
+                    </a>
+                </div>
             </div>
+            <div class="col-md-12">
+                 <a><p class="side-menu-p-font">{{ __('messages.sidebar.about')}}</p></a>
 
 
+                <button class="side-menu-p-font  {{ app()->getLocale() == 'ar' ? 'text-start' : 'text-end' }} dropdown-btn"> {{ __('messages.sidebar.services')}}
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                 <div class="dropdown-container">
+                    @foreach ($services as $service)
+                        <a target="_blank" href="{{ route('services.show', $service->id) }}">
+
+                            <p class="side-menu-p-font2">
+                                <i class="fa fa-angle-right text-success"></i>
+                                {{ $service->title_en }}
+                            </p>
+                        </a>
+                    @endforeach
+                 </div>
 
             <a><p class="side-menu-p-font">{{ __('messages.sidebar.news')}}</p></a>
             <a><p class="side-menu-p-font"> {{ __('messages.sidebar.careers')}}</p></a>
             <a><p class="side-menu-p-font"> {{ __('messages.sidebar.management')}}</p></a>
             <a><p class="side-menu-p-font"> {{ __('messages.sidebar.responsibility')}}</p></a>
+            </div>
         </div>
     </div>
-</div>
+
+
+
+
 
 
 @yield('website_scripts')

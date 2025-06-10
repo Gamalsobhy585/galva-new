@@ -11,6 +11,7 @@ mix.js('resources/js/app.js', 'public/js')
        'public/assets/js/countTo.min.js',
        'public/assets/js/flexslider.js',
        'public/assets/js/serviceDropDown.js',
+       'public/assets/js/slider.js',
        'public/assets/js/cube.portfolio.min.js',
        'public/assets/js/navFuncitionality.min.js',
         'public/assets/js/changeLocale.js'

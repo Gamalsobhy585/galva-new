@@ -64,7 +64,7 @@
         </div>
 
         <div class="widget widget_socials">
-            <div class="socials">
+            <div class="socials d-flex {{app()->getLocale() === 'ar' ? 'flex-row-reverse' : ''}}">
                 <a target="_blank" href="https://www.linkedin.com/company/engineering-co-for-metal-galvanization-eec-galva?originalSubdomain=eg" title="Linkedin"><span class="fa fa-linkedin" aria-hidden="true"></span></a>
                 <a target="_blank" href="https://www.facebook.com/GalvaEEC/" title="Facebook"><span class="fa fa-facebook" aria-hidden="true"></span></a>
             </div>

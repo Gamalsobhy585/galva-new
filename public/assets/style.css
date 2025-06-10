@@ -35,6 +35,12 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 }
 
+   * {
+            font-family: 'Cairo', sans-serif !important;
+        }
+
+        
+
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
     display: block
 }
@@ -1188,164 +1194,286 @@ p.dropcap span.first-letter {
     float: none !important;
 }
 
-/* Hero Slideshow
--------------------------------------------------------------- */
-#hero-section {
-    position: relative;
-}
-
-#hero-section .hero-content {
-    position: relative;
-    z-index: 20;
-    /*text-align: left;*/
-
-    margin-top: -525px ;
-    margin-left: 10% ;
-    float: left ;
-}
-
-#hero-section .hero-title {
-    overflow: hidden;
-    height: 80px;
-    vertical-align: baseline;
-}
-
-#hero-section .hero-title h1 {
-    font-size: 46px;
-    color: #fff;
-    height: 80px;
-    /*line-height: 80px;*/
-    margin: 0;
-    font-weight: bold;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
-    -webkit-transition: margin-top 0.4s ease-in-out;
-    -moz-transition: margin-top 0.4s ease-in-out;
-    transition: margin-top 0.4s ease-in-out;
-    /*margin-bottom: 10px !important;*/
-}
-
-
-#hero-section .hero-title h3 {
-    font-size: 23.12px;
-    color: #fff;
-    height: 80px;
-    /*line-height: 80px;*/
-    margin: 0;
-    font-weight: bold;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
-    -webkit-transition: margin-top 0.4s ease-in-out;
-    -moz-transition: margin-top 0.4s ease-in-out;
-    transition: margin-top 0.4s ease-in-out;
-    /*margin-bottom: 10px !important;*/
-}
-
-#hero-section .typed-cursor {
-    opacity: 1;
-    -webkit-animation: blink 0.7s infinite;
-    -moz-animation: blink 0.7s infinite;
-    animation: blink 0.7s infinite;
-}
-
-@keyframes blink {
-    0% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@-webkit-keyframes blink {
-    0% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@-moz-keyframes blink {
-    0% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-#hero-section .hero-text {
-    font-size: 20px;
-    width: 100%;
-    color: #fff;
-    /*margin: 10px -46px 40px;*/
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
-}
-
-#hero-section .hero-text > p {
-    /*padding: 0 15px;*/
-    max-width: 840px;
-    margin: 0 auto;
-    line-height: 1.4;
-    font-size: 17px;
-    float: left;
-    /*margin-top: -43px;*/
-}
-
-#hero-section .arrow {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    margin-left: -20px;
-    width: 40px;
-    height: 40px;
-    z-index: 999;
-    animation: bounce 2.5s infinite;
-    -webkit-animation: bounce 2.5s infinite;
-    -moz-animation: bounce 2.5s infinite;
-}
-
-#hero-section .arrow:after {
-    content: "\f107";
-    font-family: "FontAwesome";
-    font-size: 24px;
-    color: #fff;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-}
-
-#hero-section .arrow:hover:after {
-    color: #ffbc13;
-}
-
-#hero-section .arrow-2 {
-    display: inline-block;
-    width: 50px;
-    height: 150px;
-    font-size: 34px;
-    animation: bounce 2.5s infinite;
-    -webkit-animation: bounce 2.5s infinite;
-    -moz-animation: bounce 2.5s infinite;
-}
-
-#hero-section .arrow-2:hover,
-#hero-section .arrow-2:focus {
-    color: #fff;
-}
-
+/* Minimal Custom CSS - Using Bootstrap utilities where possible */
+        
+        /* Hero Section Base */
+        #hero-section {
+            position: relative;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        
+        /* Video Background */
+        #myVideo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            object-fit: cover;
+        }
+        
+        /* Video Overlay for better text readability */
+        #hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 2;
+        }
+        
+        /* Hero Content Positioning */
+        .hero-content-wrapper {
+            position: relative;
+            z-index: 10;
+            min-height: 100vh;
+        }
+        
+        /* Enhanced Typography */
+        .hero-title h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: #fff;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            line-height: 1.2;
+            margin-bottom: 0;
+            transition: all 0.4s ease-in-out;
+        }
+        
+        .hero-title h3 {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: #fff;
+            font-weight: 600;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            transition: all 0.4s ease-in-out;
+        }
+        
+        /* Hero Text Styling */
+        .hero-text {
+            font-size: 20px;
+            width: 100%;
+            color: #fff;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero-text p {
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            font-size: clamp(17px, 2vw, 20px);
+            line-height: 1.4;
+            max-width: 840px;
+            margin: 0 auto;
+        }
+        
+        /* Button Enhancements */
+        .hero-cta .btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            color: #fff;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        
+        .hero-cta .btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: #fff;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Scroll Arrow - Enhanced with FontAwesome support */
+        .scroll-arrow,
+        #hero-section .arrow {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            margin-left: -20px;
+            width: 40px;
+            height: 40px;
+            z-index: 999;
+            animation: bounce 2.5s infinite;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .scroll-arrow {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 2rem;
+            transform: translateX(-50%);
+            margin-left: 0;
+            width: auto;
+            height: auto;
+            bottom: 30px;
+        }
+        
+        .scroll-arrow:hover {
+            color: #fff;
+        }
+        
+        /* FontAwesome Arrow Style */
+        #hero-section .arrow:after {
+            content: "\f107";
+            font-family: "FontAwesome", "Font Awesome 5 Free";
+            font-weight: 900;
+            font-size: 24px;
+            color: #fff;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+        }
+        
+        #hero-section .arrow:hover:after {
+            color: #ffbc13;
+        }
+        
+        /* Alternative Arrow Style */
+        #hero-section .arrow-2 {
+            display: inline-block;
+            width: 50px;
+            height: 150px;
+            font-size: 34px;
+            animation: bounce 2.5s infinite;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        #hero-section .arrow-2:hover,
+        #hero-section .arrow-2:focus {
+            color: #fff;
+        }
+        
+        /* Enhanced Bounce Animation */
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+        
+        /* WebKit Animation Support */
+        @-webkit-keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                -webkit-transform: translateX(-50%) translateY(0);
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                -webkit-transform: translateX(-50%) translateY(-10px);
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                -webkit-transform: translateX(-50%) translateY(-5px);
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+        
+        /* Mozilla Animation Support */
+        @-moz-keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                -moz-transform: translateX(-50%) translateY(0);
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                -moz-transform: translateX(-50%) translateY(-10px);
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                -moz-transform: translateX(-50%) translateY(-5px);
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+        
+        /* Enhanced Typing Cursor Animation */
+        .typed-cursor {
+            opacity: 1;
+            animation: blink 0.7s infinite;
+            -webkit-animation: blink 0.7s infinite;
+            -moz-animation: blink 0.7s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        @-webkit-keyframes blink {
+            0%, 50% { 
+                opacity: 1; 
+                -webkit-opacity: 1;
+            }
+            51%, 100% { 
+                opacity: 0; 
+                -webkit-opacity: 0;
+            }
+        }
+        
+        @-moz-keyframes blink {
+            0%, 50% { 
+                opacity: 1; 
+                -moz-opacity: 1;
+            }
+            51%, 100% { 
+                opacity: 0; 
+                -moz-opacity: 0;
+            }
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero-content-wrapper {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            .hero-cta .btn {
+                font-size: 0.9rem;
+                padding: 0.75rem 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            #hero-section::before {
+                background: rgba(0, 0, 0, 0.5);
+            }
+            
+            .hero-title h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-text p {
+                font-size: 1rem;
+            }
+        }
+        
+        /* RTL Support */
+        [dir="rtl"] .hero-title h1,
+        [dir="rtl"] .hero-text p,
+        [dir="rtl"] .hero-cta {
+            text-align: right;
+        }
+        
+        [dir="ltr"] .hero-title h1,
+        [dir="ltr"] .hero-text p,
+        [dir="ltr"] .hero-cta {
+            text-align: left;
+        }
 /* Top Bar
 -------------------------------------------------------------- */
 #top-bar {
@@ -4017,7 +4145,6 @@ h2[dir="rtl"].ar-custom#contact-info > span::after {
 
 
 .dropdown-btn {
-    padding: 6px 8px 28px 32px;
     text-decoration: none;
     font-size: 20px;
     /*color: #818181;*/
@@ -4025,7 +4152,6 @@ h2[dir="rtl"].ar-custom#contact-info > span::after {
     border: none;
     background: none;
     width: 100%;
-    text-align: left;
     cursor: pointer;
     outline: none;
 }
