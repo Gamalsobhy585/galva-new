@@ -72,7 +72,7 @@
                 <div class="col-md-3 {{ app()->getLocale() == 'ar' ? 'order-md-2' : 'order-md-1' }}">
                     <div class="wprt-spacer" data-desktop="80" data-mobi="80" data-smobi="60"></div>
                     <h5 class="text-white {{app()->getLocale()=='ar'?'text-right':'text-left'}} font-size-70 line-height-normal letter-spacing-1px">
-                        <strong class="font-class ">{{ __('messages.info_section.title')}}</strong>
+                        <strong class=" ">{{ __('messages.info_section.title')}}</strong>
                     </h5>
                 </div>
                 
@@ -83,7 +83,7 @@
                 <!-- Description -->
                 <div class="mb-4">
                     <h6 class="text-white font-size-50 line-height-normal margin-bottom-20 letter-spacing-1px">
-                        <strong class="font-class">{{ __('messages.info_section.desc')}}</strong>
+                        <strong class="">{{ __('messages.info_section.desc')}}</strong>
                     </h6>
                 </div>
                     
