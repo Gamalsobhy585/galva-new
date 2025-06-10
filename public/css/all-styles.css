@@ -7305,7 +7305,7 @@ html[dir="rtl"]  .widget-title > span:after {
 }
 
 h2[dir="rtl"].ar-custom#contact-info > span::after {
-    left: 100% !important;
+    left: 80% !important;
 }
 
 
